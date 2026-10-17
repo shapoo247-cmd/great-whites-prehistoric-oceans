@@ -32,3 +32,10 @@ export function seaStage(era, seed) {
     }
   };
 }
+export { scrim as veil } from './ui.js';
+// bold Anton figure/word with soft shadow
+export function big(ctx, s, x, y, o = {}) {
+  ctx.save(); ctx.font = `400 ${o.size || 120}px Anton`; ctx.letterSpacing = `${o.ls ?? 4}px`; ctx.textAlign = o.align || 'left'; ctx.globalAlpha *= o.a ?? 1;
+  ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 26; ctx.fillStyle = o.color || '#fff'; ctx.fillText(s, x, y); ctx.restore();
+}
+export const COL = { hot: '#ff7a5c', warm: '#ffb06a', cold: '#8fd8ff', gw: '#7fe3ff', bad: '#ff6a5c', ok: '#9fffbb', gold: '#ffd36a' };

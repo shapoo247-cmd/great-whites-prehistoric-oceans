@@ -12,7 +12,7 @@ export function placementScene(cfg) {
   ];
   if (cfg.hover) sfx.push({ name: 'ui_tick', t: cfg.hover.tArrive, gain: -6 }, { name: 'whoosh_fast', t: cfg.hover.tLeave, gain: -14 });
   return {
-    duration: cfg.duration ?? tOutA + 2.6, out: cfg.out, sfx,
+    duration: cfg.duration ?? tOutA + 2.6, out: cfg.out, sfx, ambience: false,
     async setup() { board = new Board(); await board.init(); anim = placement({ ...cfg, tPick, tDrop, tOutA }); },
     draw(ctx, t) { const { st, cam } = anim(t); board.draw(ctx, st, cam); },
   };

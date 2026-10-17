@@ -8,7 +8,7 @@ const GL = 980, GX = 960, GY = 500;
 const rnd = mulberry(4), pts = Array.from({ length: 70 }, () => ({ o: rnd(), y: rnd(), s: 0.7 + rnd() * 0.6 }));
 const stopA = at(94.12), swimA = at(97.0), warmA = at(99.0), deadA = at(103.0);
 export default {
-  duration: D, out: '06_doc-style/E04_swim-to-breathe', alpha: true, qscale: 20,
+  duration: D, out: '06_doc-style/overlays/E04_swim-to-breathe', alpha: true, qscale: 20,
   sfx: [{ name: 'alarm_low', t: stopA, gain: -14 }, { name: 'whoosh_water', t: swimA + 0.1, gain: -12 }, { name: 'data_blip', t: warmA + 0.6, gain: -14 }, { name: 'impact_dark', t: at(104.9), gain: -9 }],
   draw(ctx, t) {
     const f = fadeEdges(t, D, 0.7, 0.8);

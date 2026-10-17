@@ -5,7 +5,7 @@ let board;
 const placed = { thrives: ['eocene'], survives: ['devonian', 'jurassic', 'pliocene'], barely: ['cretaceous'], dies: ['triassic'] };
 export function finalScene(duration, out) {
   return {
-    duration, out,
+    duration, out, ambience: false,
     sfx: [{ name: 'whoosh_slow', t: 0.0, gain: -12 }, ...TIERS.map((_, i) => ({ name: 'ui_tick', t: 0.5 + i * 0.32, gain: -7 })), { name: 'impact_deep', t: 0.5 + 4 * 0.32 + 0.1, gain: -12 }],
     async setup() { board = new Board(); await board.init(); },
     draw(ctx, t) {

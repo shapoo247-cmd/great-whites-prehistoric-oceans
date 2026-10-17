@@ -77,6 +77,7 @@ async function renderScene(id) {
   const n = Math.round(meta.duration * meta.fps);
   for (let i = 0; i < n; i++) await page.evaluate(t => window.__frame(t), i / meta.fps);
   sink = null; ff.stdin.end(); await done; await page.close();
+  if (meta.ambience) execFileSync('python3', [path.join(REPO, 'tools', 'add_ambience.py'), out, '-6'], { stdio: 'inherit' });
   console.log(`✓ ${id} -> ${path.relative(REPO, out)} (${n} frames, ${((Date.now() - t0) / 1000).toFixed(1)}s)`);
 }
 

@@ -35,7 +35,7 @@
     const scene = mod.default;
     const env = { W: 1920, H: 1080, fps: scene.fps || 30, canvas };
     if (scene.setup) await scene.setup(ctx, env);
-    window.__meta = { duration: scene.duration, fps: env.fps, alpha: !!scene.alpha, out: scene.out, sfx: scene.sfx || [], qscale: scene.qscale || null };
+    window.__meta = { duration: scene.duration, fps: env.fps, alpha: !!scene.alpha, out: scene.out, sfx: scene.sfx || [], ambience: scene.ambience !== false, qscale: scene.qscale || null };
     window.__draw = (t) => { ctx.setTransform(1,0,0,1,0,0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none'; ctx.clearRect(0,0,1920,1080); scene.draw(ctx, t, env); };
     window.__frame = async (t) => {
       window.__draw(t);
