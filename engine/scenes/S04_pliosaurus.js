@@ -1,0 +1,2 @@
+import { speciesScene } from '../lib/species.js'; import { C } from '../lib/ui.js';
+export default speciesScene({ out: '03_species-cards/S04_pliosaurus', name: 'PLIOSAURUS', role: 'THREAT', roleColor: C.threat, sub: 'Giant marine reptile · Late Jurassic', stats: [['LENGTH', 'UP TO 12 m'], ['SKULL', '~2 m']], statTimes: [1.4, 3.0], creature: 'pliosaurus', scale: 'up to 12 m', iconLen: 300, duration: 5.5 });

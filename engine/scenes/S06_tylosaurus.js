@@ -1,0 +1,2 @@
+import { speciesScene } from '../lib/species.js'; import { C } from '../lib/ui.js';
+export default speciesScene({ out: '03_species-cards/S06_tylosaurus', name: 'TYLOSAURUS', role: 'THREAT', roleColor: C.threat, sub: 'Mosasaur · giant marine lizard · Late Cretaceous', stats: [['WEAPON', 'BONY SNOUT'], ['DIET', 'INCLUDED PLESIOSAURS']], statTimes: [0.8, 4.4], creature: 'tylosaurus', iconLen: 320, duration: 5.5 });

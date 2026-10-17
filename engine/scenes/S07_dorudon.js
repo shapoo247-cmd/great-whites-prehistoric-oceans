@@ -1,0 +1,2 @@
+import { speciesScene } from '../lib/species.js'; import { C } from '../lib/ui.js';
+export default speciesScene({ out: '03_species-cards/S07_dorudon', name: 'DORUDON', role: 'PREY', roleColor: C.prey, sub: 'Early whale · Late Eocene · Tethys Sea', stats: [['LENGTH', '~5 m'], ['CALVES', 'BORN IN THE SHALLOWS']], statTimes: [1.0, 2.6], creature: 'dorudon', scale: '~5 m', iconLen: 240, duration: 5.5 });

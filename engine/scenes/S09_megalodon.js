@@ -1,0 +1,2 @@
+import { speciesScene } from '../lib/species.js'; import { C } from '../lib/ui.js';
+export default speciesScene({ out: '03_species-cards/S09_megalodon', name: 'MEGALODON', role: 'APEX PREDATOR', roleColor: '#ff4b3e', sub: 'Otodus megalodon · extinct giant shark', stats: [['LENGTH', '~16 m'], ['≈', '3 GREAT WHITES']], statTimes: [1.0, 1.6], creature: 'megalodon', scale: '~16 m', iconLen: 330, duration: 5.0 });

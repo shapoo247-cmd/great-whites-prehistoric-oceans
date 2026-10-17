@@ -1,0 +1,2 @@
+import { speciesScene } from '../lib/species.js'; import { C } from '../lib/ui.js';
+export default speciesScene({ out: '03_species-cards/S08_basilosaurus', name: 'BASILOSAURUS', role: 'COMPETITOR', roleColor: C.rival, sub: 'Serpent-shaped whale · Late Eocene', stats: [['LENGTH', '15–18 m'], ['HUNTS', 'CALVES, NOT SHARKS']], statTimes: [1.6, 4.0], creature: 'basilosaurus', scale: '15–18 m', iconLen: 380, duration: 5.5 });

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: 'Inter'; font-weight: 400; src: url('node_modules/@fontsource/inter/files/inter-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 500; src: url('node_modules/@fontsource/inter/files/inter-latin-500-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 600; src: url('node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 700; src: url('node_modules/@fontsource/inter/files/inter-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-weight: 800; src: url('node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Anton'; font-weight: 400; src: url('node_modules/@fontsource/anton/files/anton-latin-400-normal.woff2') format('woff2'); }
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script type="importmap">
+{ "imports": {
+  "d3-geo": "./node_modules/d3-geo/src/index.js",
+  "d3-array": "./node_modules/d3-array/src/index.js",
+  "internmap": "./node_modules/internmap/src/index.js",
+  "topojson-client": "./node_modules/topojson-client/src/index.js"
+} }
+</script>
+<script type="module">
+  const params = new URLSearchParams(location.search);
+  const id = params.get('scene');
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+  window.__error = null;
+  try {
+    await Promise.all(['400 20px Inter','500 20px Inter','600 20px Inter','700 20px Inter','800 20px Inter','400 20px Anton'].map(f => document.fonts.load(f)));
+    const mod = await import(`./scenes/${id}.js`);
+    const scene = mod.default;
+    const env = { W: 1920, H: 1080, fps: scene.fps || 30, canvas };
+    if (scene.setup) await scene.setup(ctx, env);
+    window.__meta = { duration: scene.duration, fps: env.fps, alpha: !!scene.alpha, out: scene.out, sfx: scene.sfx || [], qscale: scene.qscale || null };
+    window.__draw = (t) => { ctx.setTransform(1,0,0,1,0,0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.filter = 'none'; ctx.clearRect(0,0,1920,1080); scene.draw(ctx, t, env); };
+    window.__frame = async (t) => {
+      window.__draw(t);
+      const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+      await fetch('/frame', { method: 'POST', body: blob });
+      return blob.size;
+    };
+    window.__ready = true;
+  } catch (e) { window.__error = String(e && e.stack || e); window.__ready = true; }
+</script>
+</body>
+</html>
