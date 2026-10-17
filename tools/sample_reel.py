@@ -10,18 +10,18 @@ def segment(name, v0, v1, clips, slots, bg='0x2c3b27'):
     inp = ['-f', 'lavfi', '-i', f'color=c={bg}:s=1920x1080:r=30:d={d:.3f}', '-ss', f'{v0}', '-t', f'{d:.3f}', '-i', VO]
     fc = ["[0:v]noise=alls=14:allf=t,vignette=PI/4"]
     for (a, b, label) in slots:
-        fc[-1] += f",drawbox=x=0:y=0:w=iw:h=ih:color=black@0:t=fill:enable='between(t,{a:.3f},{b:.3f})'"
+        a -= v0; b -= v0
         fc[-1] += f",drawtext=fontfile={FONT}:text='FOOTAGE SLOT':fontsize=34:fontcolor=white@0.55:x=(w-text_w)/2:y=h/2-70:enable='between(t,{a:.3f},{b:.3f})'"
         fc[-1] += f",drawtext=fontfile={FONT}:text='{label}':fontsize=44:fontcolor=white@0.9:x=(w-text_w)/2:y=h/2-10:enable='between(t,{a:.3f},{b:.3f})'"
     fc[-1] += "[base]"
-    last = 'base'; aud = ['[1:a]volume=1.0[vo]']; amix = ['[vo]']
+    n = 2; last = 'base'; aud = ['[1:a]volume=1.0[vo]']; amix = ['[vo]']
     for i, (f, start) in enumerate(clips):
-        idx = 2 + i; inp += ['-i', f]; cd = dur(f); s = start - v0
+        idx = n; n += 1; inp += ['-i', f]; cd = dur(f); s = start - v0
         fc.append(f"[{idx}:v]setpts=PTS-STARTPTS+{s:.3f}/TB[c{i}]")
         fc.append(f"[{last}][c{i}]overlay=0:0:eof_action=pass:enable='between(t,{s:.3f},{s+cd:.3f})'[v{i}]"); last = f'v{i}'
         sfx = f.rsplit('.', 1)[0] + '_SFX.wav'
         if os.path.exists(sfx):
-            k = len(inp) // 2; inp += ['-i', sfx]
+            k = n; n += 1; inp += ['-i', sfx]
             aud.append(f"[{k}:a]adelay={int(max(s,0)*1000)}|{int(max(s,0)*1000)},volume=0.8[s{i}]"); amix.append(f'[s{i}]')
     fc += aud + [''.join(amix) + f"amix=inputs={len(amix)}:normalize=0:duration=first,alimiter=limit=0.95[a]"]
     out = f'{TMP}/{name}.mp4'

@@ -6,7 +6,7 @@ const T0 = 93.3, at = s => s - T0, D = 12.2;
 const PX = 110, PY = 470, PW = 860, PH = 520;           // HUD panel (lower-left)
 const rnd = mulberry(5), streaks = Array.from({ length: 26 }, () => ({ y: rnd(), s: 0.6 + rnd() * 0.8, o: rnd(), l: 30 + rnd() * 60 }));
 export default {
-  duration: D, out: '05_environment/E04_oxygen-hud', alpha: true,
+  duration: D, out: '05_environment/E04_oxygen-hud', alpha: true, qscale: 20,
   sfx: [{ name: 'data_blip', t: 0.15, gain: -12 }, { name: 'alarm_low', t: at(94.43), gain: -12 }, { name: 'whoosh_water', t: at(97.37), gain: -12 }, { name: 'data_blip', t: at(99.75), gain: -10 }, { name: 'alarm_low', t: at(103.3), gain: -10 }, { name: 'impact_dark', t: at(104.9), gain: -8 }],
   draw(ctx, t) {
     const inn = P(t, 0, 0.45, ease.outCubic), out = P(t, D - 0.5, D, ease.inCubic);

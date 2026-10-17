@@ -10,7 +10,7 @@ const ecg = u => { // one heartbeat shape, u 0..1
   return g(0.18, 0.035, 0.18) - g(0.36, 0.012, 0.22) + g(0.4, 0.014, 1.0) - g(0.44, 0.014, 0.35) + g(0.66, 0.05, 0.28);
 };
 export default {
-  duration: D, out: '05_environment/E02_electroreception', alpha: true,
+  duration: D, out: '05_environment/E02_electroreception', alpha: true, qscale: 20,
   sfx: [{ name: 'sonar_ping', t: 0.1, gain: -9 }, { name: 'data_blip', t: at(79.62), gain: -12 }, { name: 'heartbeat', t: at(80.9), gain: -9 }, { name: 'data_blip', t: at(81.46), gain: -10 }],
   draw(ctx, t) {
     const out = P(t, D - 0.45, D, ease.inCubic), inn = P(t, 0, 0.4, ease.outCubic);
