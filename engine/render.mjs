@@ -84,11 +84,11 @@ async function renderScene(id) {
 async function renderStills(id, times, dir) {
   const { page, meta } = await openScene(id);
   fs.mkdirSync(dir, { recursive: true });
-  if (meta.alpha) await page.evaluate(() => { document.body.style.background = 'linear-gradient(135deg,#4a5560,#22282e)'; });
+  const bgMode = process.env.STILL_BG; if (meta.alpha && bgMode !== 'transparent') await page.evaluate(() => { document.body.style.background = 'linear-gradient(135deg,#4a5560,#22282e)'; });
   for (const t of times) {
     await page.evaluate(t => window.__draw(t), t);
     const fp = path.join(dir, `${id}_${String(t).replace('.', '_')}.png`);
-    await page.screenshot({ path: fp, omitBackground: false });
+    await page.screenshot({ path: fp, omitBackground: bgMode === 'transparent' });
     console.log(fp);
   }
   await page.close();
