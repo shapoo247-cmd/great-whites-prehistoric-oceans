@@ -18,10 +18,7 @@ sc.draw = (ctx, t) => {
   plesiosaur(ctx, st[0], st[1] + 4, 150, 'rgba(255,214,120,0.95)', P(t, tP, tP + 0.5, slow) * (1 - P(t, tS - 0.2, tS + 0.4)));
   // "may have": a dashed shark outline (uncertain)
   const ks = P(t, tS, tS + 0.6, slow); if (ks > 0) { ctx.save(); ctx.globalAlpha *= ks * 0.8; drawCreature(ctx, 'greatwhite', { x: st[0], y: st[1] + 4, len: 200, color: 'rgba(255,214,120,0.95)', phase: 0 }); ctx.restore(); }
-  hair(ctx, st[0], st[1] - 62, st[0] - 80, st[1] - 190, P(t, tP - 0.2, tP + 0.5, ease.outCubic), 0.8);
   const l1 = P(t, tP - 0.1, tP + 0.5, slow) * (1 - P(t, tS - 0.2, tS + 0.4));
-  cap(ctx, 'STOMACH: A PLESIOSAUR', st[0] - 90, st[1] - 200, { align: 'right', font: '500 22px Inter', ls: 8, a: l1, color: COL.gold });
-  cap(ctx, 'ANOTHER: MAYBE A SHARK', st[0] - 90, st[1] - 200, { align: 'right', font: '500 22px Inter', ls: 8, a: P(t, tS, tS + 0.5, slow), color: COL.gold });
-  ctx.restore();
+      ctx.restore();
 };
 export default sc;

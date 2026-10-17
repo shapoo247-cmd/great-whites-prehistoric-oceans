@@ -14,12 +14,11 @@ sc.draw = (ctx, t) => {
   const kw = P(t, tTwo - 0.4, tTwo + 0.3, slow);
   ctx.save(); ctx.globalAlpha *= kw; ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.setLineDash([7, 7]); ctx.beginPath(); ctx.ellipse(st[0], st[1], 120, 46, 0, 0, 7); ctx.stroke(); ctx.restore();
   for (let i = 0; i < 2; i++) { ctx.save(); ctx.globalAlpha *= P(t, tTwo + i * 0.4, tTwo + 0.5 + i * 0.4, slow); drawCreature(ctx, 'dorudon', { x: st[0] - 40 + i * 80, y: st[1] + 2 - i * 3, len: 100, color: 'rgba(255,214,120,0.95)', phase: 0, angle: i ? 0.12 : -0.1 }); ctx.restore(); }
-  cap(ctx, 'AT LEAST 2 YOUNG DORUDON INSIDE', st[0], st[1] - 120, { align: 'center', font: '500 22px Inter', ls: 8, a: P(t, tTwo, tTwo + 0.6, slow) * (1 - P(t, tSk - 0.2, tSk + 0.4)), color: COL.gold });
-  // calf skulls with bite marks
+    // calf skulls with bite marks
   const ks = P(t, tSk, tSk + 0.6, slow);
   if (ks > 0) { for (let i = 0; i < 2; i++) { const x = 1330 + i * 230, y = 330 + i * 40; skull(ctx, x, y, 60, ks);
       puncture(ctx, x + 30, y - 38, 8, P(t, tSk + 0.5 + i * 0.1, tSk + 0.8 + i * 0.1)); puncture(ctx, x + 66, y - 28, 8, P(t, tSk + 0.6 + i * 0.1, tSk + 0.9 + i * 0.1)); puncture(ctx, x + 8, y + 32, 8, P(t, tSk + 0.7 + i * 0.1, tSk + 1.0 + i * 0.1)); }
-    cap(ctx, 'CALF SKULLS · BITE MARKS', 1480, 450, { align: 'center', font: '500 22px Inter', ls: 8, a: ks, color: COL.gold }); }
+    }
   ctx.restore();
 };
 export default sc;

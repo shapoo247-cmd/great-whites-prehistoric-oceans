@@ -21,8 +21,6 @@ sc.draw = (ctx, t) => {
   // mosasaurs vanish
   const v = P(t, tVan, tVan + 1.0, slow);
   if (t > tHit) { ctx.globalAlpha = (1 - v) * P(t, tHit + 0.1, tHit + 0.5); drawCreature(ctx, 'tylosaurus', { x: 600, y: 860, len: 700, color: 'rgba(255,255,255,0.35)', flip: true, phase: t * 2 }); }
-  cap(ctx, 'ASTEROID IMPACT', 120, 960, { font: '500 24px Inter', ls: 12, a: P(t, tHit, tHit + 0.5, slow) * (1 - P(t, D - 0.8, D)) });
-  cap(ctx, 'THE MOSASAURS VANISH', 120, 1004, { font: '500 20px Inter', ls: 10, a: v * 0.9 * (1 - P(t, D - 0.8, D)), color: COL.bad });
-  ctx.restore();
+      ctx.restore();
 };
 export default sc;

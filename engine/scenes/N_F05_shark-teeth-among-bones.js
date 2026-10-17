@@ -14,8 +14,6 @@ sc.draw = (ctx, t) => {
   bones.forEach((b, i) => bone(ctx, b.x, b.y, b.l, b.a, P(t, 0.1 + i * 0.07, 0.7 + i * 0.07, ease.outCubic)));
   vertebra(ctx, 1500, 640, 40, 0.4, P(t, 0.4, 1.0)); vertebra(ctx, 1380, 690, 38, -0.3, P(t, 0.5, 1.1));
   teeth.forEach((x, i) => tooth(ctx, x.x, x.y, x.h, x.rot, P(t, tTeeth + i * 0.16, tTeeth + 0.35 + i * 0.16, ease.outBack), 0.6 + 0.4 * Math.sin(t * 5 + i)));
-  cap(ctx, 'SHARK TEETH AMONG ITS BONES', 1500, 820, { align: 'center', font: '500 22px Inter', ls: 8, a: P(t, tTeeth, tTeeth + 0.6, slow) });
-  cap(ctx, 'SHARKS ATE THE GIANT', 1500, 862, { align: 'center', font: '500 18px Inter', ls: 8, a: P(t, tAte, tAte + 0.6, slow), color: COL.gold });
-  ctx.restore();
+      ctx.restore();
 };
 export default sc;

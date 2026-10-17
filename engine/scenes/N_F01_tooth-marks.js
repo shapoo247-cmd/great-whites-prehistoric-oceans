@@ -10,8 +10,7 @@ const names = ['ICHTHYOSAURS', 'PLESIOSAURS', 'OTHER PLIOSAURS'];
 sc.draw = (ctx, t) => {
   ctx.save(); ctx.globalAlpha = fadeEdges(t, D, 0.5, 0.8);
   veil(ctx, 1040, 160, 880, 780, 0.34);
-  cap(ctx, 'PLIOSAURUS TOOTH MARKS', 1480, 250, { align: 'center', font: '500 22px Inter', ls: 12, a: P(t, 0.2, 0.9, slow) });
-  tc.forEach((tt, i) => {
+    tc.forEach((tt, i) => {
     const y = 420 + i * 190, kb = P(t, tt - 0.5, tt + 0.2, ease.outCubic);
     bone(ctx, 1480, y, 520, -0.04 + i * 0.05, kb);
     for (let j = 0; j < 5; j++) puncture(ctx, 1370 + j * 52 + (j % 2) * 4, y - 8 + (j % 2) * 20 + i * 3, 9, P(t, tt + 0.15 + j * 0.08, tt + 0.4 + j * 0.08));

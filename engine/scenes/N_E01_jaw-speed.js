@@ -31,8 +31,6 @@ sc.draw = (ctx, t) => {
   // 1/50 s readout
   const ka = P(t, tFifth - 0.1, tFifth + 0.5, slow);
   big(ctx, '1/50 s', 1480, 760, { size: 130, align: 'center', a: ka });
-  cap(ctx, 'JAWS SNAP OPEN', 1480, 810, { align: 'center', font: '500 22px Inter', ls: 12, a: ka, color: COL.gw });
-  const ks = P(t, tSuck, tSuck + 0.6, slow); cap(ctx, 'PREY SUCKED STRAIGHT IN', 1480, 865, { align: 'center', font: '500 22px Inter', ls: 10, a: ks });
-  ctx.restore();
+    const ks = P(t, tSuck, tSuck + 0.6, slow);   ctx.restore();
 };
 export default sc;

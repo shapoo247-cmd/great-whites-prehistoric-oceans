@@ -18,7 +18,6 @@ export function titleScene(c) {
       ctx.restore();
       const g = ctx.createLinearGradient(0, 300, 0, 800); g.addColorStop(0, 'rgba(0,0,0,0)'); g.addColorStop(0.5, 'rgba(0,0,0,0.38)'); g.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = g; ctx.fillRect(0, 0, 1920, 1080);
       ctx.save(); ctx.globalAlpha = fadeEdges(t, D, 0.4, 0.6);
-      cap(ctx, `OCEAN ${c.n} OF 6`, 960, 408, { font: '500 24px Inter', ls: 14, align: 'center', a: P(t, 0.15, 0.8, slow), color: 'rgba(255,255,255,0.75)' });
       const w = P(t, 0.35, 1.3, ease.outCubic);
       ctx.save(); ctx.beginPath(); ctx.rect(0, 420, 1920 * w, 230); ctx.clip();
       ctx.font = `400 ${c.size ?? 180}px Anton`; ctx.letterSpacing = '10px'; ctx.textAlign = 'center'; ctx.fillStyle = '#fff'; ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 30;

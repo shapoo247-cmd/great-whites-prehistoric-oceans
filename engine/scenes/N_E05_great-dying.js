@@ -9,8 +9,7 @@ sc.setup = async () => { await loadVO(); R = rel(T0); tTitle = R.s('great dying'
 sc.draw = (ctx, t) => {
   ctx.save(); ctx.globalAlpha = fadeEdges(t, D, 0.5, 0.7);
   veil(ctx, 1000, 150, 900, 800, 0.32);
-  cap(ctx, 'AFTER THE GREAT DYING', 1460, 260, { align: 'center', font: '500 22px Inter', ls: 12, a: P(t, tTitle - 0.2, tTitle + 0.6, slow) });
-  // 10x10 field: each dot = 1 in 100 marine species. Dots go dark between "eighty" and "ninety"
+    // 10x10 field: each dot = 1 in 100 marine species. Dots go dark between "eighty" and "ninety"
   const gx = 1460, gy = 330, sp = 36, dying = lerp(0, 90, P(t, t80, t90 + 0.5, ease.inOutQuad));
   const kIn = P(t, 0.2, 1.0, slow);
   order.forEach((idx, rank) => {
@@ -20,7 +19,6 @@ sc.draw = (ctx, t) => {
     ctx.beginPath(); ctx.arc(x, y, 8 - 4 * gone, 0, 7); ctx.fill(); ctx.restore();
   });
   const ka = P(t, t80 - 0.1, t80 + 0.5, slow); big(ctx, '80–90%', 1460, 780, { size: 150, align: 'center', a: ka });
-  cap(ctx, 'OF MARINE SPECIES GONE', 1460, 840, { align: 'center', font: '500 22px Inter', ls: 10, a: P(t, R.s('percent', 128) , R.s('percent', 128) + 0.6, slow), color: COL.bad });
-  ctx.restore();
+    ctx.restore();
 };
 export default sc;

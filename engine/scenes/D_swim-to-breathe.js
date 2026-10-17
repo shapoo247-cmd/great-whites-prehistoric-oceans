@@ -45,12 +45,10 @@ export default {
     ctx.restore();
     // quiet labels: one at a time
     const L = [[stopA + 0.1, swimA - 0.2, 'STOP SWIMMING  =  NO WATER OVER THE GILLS', '#ff9a8e'], [swimA + 0.3, warmA - 0.2, 'SWIM  =  BREATHE', '#9fffbb'], [warmA + 0.2, deadA - 0.2, 'WARM BODY  =  MORE OXYGEN BURNED', '#ffc18a']];
-    L.forEach(([a, b, s, c]) => { const k = Math.min(P(t, a, a + 0.5, slow), 1 - P(t, b - 0.4, b, slow)); if (k > 0) cap(ctx, s, 960, 880, { align: 'center', font: '500 26px Inter', ls: 6, a: k, color: c }); });
     // dead zones close in from both edges
     const dk = P(t, deadA, at(105.4), ease.inOutQuad);
     if (dk > 0) {
       for (const side of [0, 1]) { const w = 760 * dk; const x0 = side ? 1920 : 0, dir = side ? -1 : 1; const g = ctx.createLinearGradient(x0, 0, x0 + dir * w, 0); g.addColorStop(0, 'rgba(140,30,24,0.75)'); g.addColorStop(1, 'rgba(140,30,24,0)'); ctx.fillStyle = g; ctx.fillRect(Math.min(x0, x0 + dir * w), 0, w, 1080); }
-      cap(ctx, 'DEAD ZONES SPREAD', 960, 880, { align: 'center', font: '500 26px Inter', ls: 8, a: P(t, deadA, deadA + 0.5, slow), color: '#ff9a8e' });
     }
     ctx.restore();
   }

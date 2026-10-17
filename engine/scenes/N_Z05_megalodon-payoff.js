@@ -17,9 +17,7 @@ sc.draw = (ctx, t) => {
   const by = MY + ML * 0.3 - 20; measure(ctx, X0, X0 + ML, by, P(t, t16 - 0.2, t16 + 0.8), '', '#fff'); if (kG > 0) measure(ctx, X0 + ML, X0 + ML * 1.12, by, kG, '', 'rgba(255,211,106,0.85)', { dash: [10, 8] });
   ctx.restore();
   cap(ctx, 'MEGALODON', 150, 130, { font: '500 28px Inter', ls: 16, a: P(t, 1.6, 2.2, slow) });
-  cap(ctx, 'WELL-STUDIED SKELETON · BELGIUM', 152, 172, { font: '400 17px Inter', ls: 9, a: P(t, tBel, tBel + 0.6, slow), color: 'rgba(255,255,255,0.8)' });
-  big(ctx, '~16 m', X0 + ML / 2 * 1.035, 1060, { size: 70, align: 'center', a: P(t, t16, t16 + 0.4) });
-  big(ctx, '≈ 3 GREAT WHITES', 1770, 150, { size: 60, align: 'right', a: P(t, tNose + 0.3, tNose + 0.8), color: COL.gw }); cap(ctx, 'NOSE TO TAIL', 1770, 192, { align: 'right', font: '500 18px Inter', ls: 12, a: P(t, tNose + 0.3, tNose + 0.8), color: COL.gw });
-  if (kG > 0) cap(ctx, 'SOME ESTIMATES GO HIGHER', 1770, 232, { align: 'right', font: '500 18px Inter', ls: 10, a: kG, color: COL.gold });
+    big(ctx, '~16 m', X0 + ML / 2 * 1.035, 1060, { size: 70, align: 'center', a: P(t, t16, t16 + 0.4) });
+  big(ctx, '≈ 3 GREAT WHITES', 1770, 150, { size: 60, align: 'right', a: P(t, tNose + 0.3, tNose + 0.8), color: COL.gw });
 };
 export default sc;

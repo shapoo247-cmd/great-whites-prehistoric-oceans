@@ -12,10 +12,9 @@ sc.draw = (ctx, t) => {
   // axis
   const ka = P(t, 0.3, 1.2, slow); ctx.save(); ctx.globalAlpha *= ka; ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(X0, Y); ctx.lineTo(X1, Y); ctx.stroke(); ctx.restore();
   for (let m = 7; m >= 0; m--) { ctx.fillStyle = 'rgba(255,255,255,0.55)'; ctx.globalAlpha = ka; ctx.fillRect(mya(m) - 1, Y, 2, 10); cap(ctx, m === 0 ? 'TODAY' : `${m}`, mya(m), Y + 40, { align: 'center', font: '500 16px Inter', ls: 4, a: ka * 0.85 }); }
-  cap(ctx, 'MILLION YEARS AGO', X0, Y + 78, { font: '500 14px Inter', ls: 8, a: ka * 0.6 });
-  // oceans cooled gradient strip
+    // oceans cooled gradient strip
   const kc = P(t, tCool, tCool + 2.5, ease.inOutQuad);
-  if (kc > 0) { const g = ctx.createLinearGradient(X0, 0, X1, 0); g.addColorStop(0, 'rgba(255,170,110,0.0)'); g.addColorStop(1, 'rgba(120,210,255,0.55)'); ctx.save(); ctx.globalAlpha *= kc; ctx.fillStyle = g; ctx.fillRect(X0, Y - 8, (X1 - X0), 6); ctx.restore(); cap(ctx, 'OCEANS COOLED · PREY SHIFTED', X1, Y - 24, { align: 'right', font: '500 18px Inter', ls: 8, a: kc * 0.9, color: COL.cold }); }
+  if (kc > 0) { const g = ctx.createLinearGradient(X0, 0, X1, 0); g.addColorStop(0, 'rgba(255,170,110,0.0)'); g.addColorStop(1, 'rgba(120,210,255,0.55)'); ctx.save(); ctx.globalAlpha *= kc; ctx.fillStyle = g; ctx.fillRect(X0, Y - 8, (X1 - X0), 6); ctx.restore(); }
   // bars: great white from ~6 MYA to today; megalodon until ~3.6 MYA
   const kg = P(t, tCool + 0.5, tCool + 2.4, ease.outCubic), km = P(t, 0.8, 2.2, ease.outCubic);
   const rowG = Y - 120, rowM = Y - 200;
@@ -26,11 +25,9 @@ sc.draw = (ctx, t) => {
   // megalodon ends at 3.6
   const ke = P(t, tGone - 0.2, tGone + 0.5, ease.outBack);
   if (ke > 0) { const x = mya(3.6); ctx.save(); ctx.globalAlpha *= ke; ctx.strokeStyle = COL.bad; ctx.lineWidth = 3; ctx.shadowColor = COL.bad; ctx.shadowBlur = 14; ctx.setLineDash([8, 7]); ctx.beginPath(); ctx.moveTo(x, rowM - 40); ctx.lineTo(x, Y); ctx.stroke(); ctx.setLineDash([]); ctx.beginPath(); ctx.moveTo(x - 16, rowM - 16); ctx.lineTo(x + 16, rowM + 16); ctx.moveTo(x + 16, rowM - 16); ctx.lineTo(x - 16, rowM + 16); ctx.stroke(); ctx.restore();
-    big(ctx, '~3.6 MYA', x, rowM - 62, { size: 66, align: 'center', a: ke }); cap(ctx, 'MEGALODON GONE', x, rowM - 22 - 80 + 0, { align: 'center', font: '500 18px Inter', ls: 8, a: ke * 0.0 }); }
-  // cause debated
-  const kd = P(t, tDebate - 0.1, tDebate + 0.6, slow);
-  if (kd > 0) { cap(ctx, 'WHY? STILL DEBATED', 960, 380, { align: 'center', font: '500 26px Inter', ls: 12, a: kd });
-    [['GREAT WHITES?', tDebate + 0.2], ['COOLING SEAS', tAlso], ['CHANGING PREY', tAlso + 0.9]].forEach(([s, tt], i) => cap(ctx, s, 960 + (i - 1) * 380, 430, { align: 'center', font: '500 18px Inter', ls: 8, a: P(t, tt, tt + 0.5, slow) * 0.9, color: i === 0 ? '#ffd36a' : '#a8d8ff' })); }
+    big(ctx, '~3.6 MYA', x, rowM - 62, { size: 66, align: 'center', a: ke }); }
+  // cause debated: just a question mark
+  const kd = P(t, tDebate - 0.1, tDebate + 0.6, slow); if (kd > 0) big(ctx, '?', mya(3.6) + 330, rowM + 28, { size: 110, align: 'center', a: kd * (0.7 + 0.3 * Math.sin(t * 3)), color: '#ffd36a' });
   ctx.restore();
 };
 export default sc;

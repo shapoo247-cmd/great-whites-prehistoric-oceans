@@ -15,17 +15,16 @@ sc.draw = (ctx, t) => {
   cap(ctx, 'MEGALODON', 460, 330, { align: 'center', font: '500 24px Inter', ls: 12, a: km, color: '#ffa64d' });
   drawCreature(ctx, 'megalodon', { x: 440, y: 560, len: 640, color: `rgba(255,166,77,${0.9 * km})`, phase: t * 2, flip: false });
   ctx.save(); ctx.globalAlpha *= km; drawCreature(ctx, 'dorudon', { x: 640, y: 690, len: 300, color: 'rgba(255,255,255,0.85)', phase: 0, angle: 0.25 }); ctx.restore();
-  cap(ctx, 'ENORMOUS MEALS', 460, 800, { align: 'center', font: '500 22px Inter', ls: 10, a: km });
-  // divider
+    // divider
   hair(ctx, 960, 300, 960, 860, P(t, tGw - 0.3, tGw + 0.6, ease.outCubic), 0.5);
   // right: great white, many options
   const kg = P(t, tGw - 0.1, tGw + 0.8, slow);
   cap(ctx, 'GREAT WHITE', 1420, 330, { align: 'center', font: '500 24px Inter', ls: 12, a: kg, color: '#7fe3ff' });
   drawCreature(ctx, 'greatwhite', { x: 1420, y: 480, len: 400, color: `rgba(127,227,255,${0.9 * kg})`, phase: t * 4, flip: false });
   const items = [[tSeal, 'SEALS', 1060, (x, y, a) => sealIcon(ctx, x, y, 110, '#ffffff', a, t * 4)], [tFish, 'FISH', 1210, (x, y, a) => fishIcon(ctx, x, y, 100, '#ffffff', a, false, t * 6)], [tDol, 'DOLPHINS', 1370, (x, y, a) => dolphinIcon(ctx, x, y, 130, '#ffffff', a, t * 4)]];
-  items.forEach(([tt, name, x, draw]) => { const k = P(t, tt - 0.1, tt + 0.5, ease.outBack), ka = P(t, tt - 0.1, tt + 0.5); draw(x, 690 - (1 - Math.min(k, 1)) * 20, ka); cap(ctx, name, x, 780, { align: 'center', font: '500 18px Inter', ls: 8, a: ka }); });
+  items.forEach(([tt, name, x, draw]) => { const k = P(t, tt - 0.1, tt + 0.5, ease.outBack), ka = P(t, tt - 0.1, tt + 0.5); draw(x, 690 - (1 - Math.min(k, 1)) * 20, ka);  });
   const kw = P(t, tWhale - 0.1, tWhale + 0.6, slow);
-  if (kw > 0) { ctx.save(); ctx.globalAlpha *= kw; drawCreature(ctx, 'dorudon', { x: 1620, y: 700, len: 190, color: 'rgba(255,255,255,0.85)', phase: 0, angle: -0.45 }); ctx.strokeStyle = 'rgba(160,235,255,0.8)'; ctx.lineWidth = 2; for (let i = 0; i < 3; i++) { const a = (t * 0.8 + i / 3) % 1; ctx.globalAlpha = kw * (1 - a) * 0.8; ctx.beginPath(); ctx.arc(1620, 700, 40 + a * 120, -0.9, 0.9); ctx.stroke(); } ctx.restore(); cap(ctx, 'DEAD WHALE', 1620, 780, { align: 'center', font: '500 18px Inter', ls: 8, a: kw }); cap(ctx, 'FOUND BY SMELL', 1620, 812, { align: 'center', font: '500 15px Inter', ls: 7, a: kw * 0.8, color: '#a8d8ff' }); }
+  if (kw > 0) { ctx.save(); ctx.globalAlpha *= kw; drawCreature(ctx, 'dorudon', { x: 1620, y: 700, len: 190, color: 'rgba(255,255,255,0.85)', phase: 0, angle: -0.45 }); ctx.strokeStyle = 'rgba(160,235,255,0.8)'; ctx.lineWidth = 2; for (let i = 0; i < 3; i++) { const a = (t * 0.8 + i / 3) % 1; ctx.globalAlpha = kw * (1 - a) * 0.8; ctx.beginPath(); ctx.arc(1620, 700, 40 + a * 120, -0.9, 0.9); ctx.stroke(); } ctx.restore(); }
   ctx.restore();
 };
 export default sc;

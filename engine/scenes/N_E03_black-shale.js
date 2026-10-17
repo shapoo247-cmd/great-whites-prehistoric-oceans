@@ -28,12 +28,9 @@ sc.draw = (ctx, t) => {
   const lg = ctx.createLinearGradient(0, 0, 1920, 0); lg.addColorStop(0, 'rgba(255,240,200,0.10)'); lg.addColorStop(0.5, 'rgba(0,0,0,0)'); lg.addColorStop(1, 'rgba(0,0,0,0.55)'); ctx.fillStyle = lg; ctx.fillRect(0, 0, 1920, 1080);
   W.post(ctx, 4 + t, Math.round(t * 30), { vignette: 0.75, grain: 0.14 });
   // quiet labels
-  cap(ctx, 'LATE DEVONIAN ROCKS', 120, 150, { font: '500 26px Inter', ls: 12, a: P(t, tRocks - 0.1, tRocks + 0.6, slow) });
-  const bs = strata.find(s => s.black && s.y1 + ofs > 380 && s.y0 + ofs < 760) || strata[5];
+    const bs = strata.find(s => s.black && s.y1 + ofs > 380 && s.y0 + ofs < 760) || strata[5];
   const kB = P(t, tShale, tShale + 0.6, slow), by = (bs.y0 + bs.y1) / 2 + ofs;
   if (kB > 0) { hair(ctx, 1080, by, 1380, by, kB, 0.9); cap(ctx, 'BLACK SHALE', 1400, by + 18, { font: '400 54px Inter', ls: 6, a: kB }); }
   const kD = P(t, tDead, tDead + 0.6, slow);
-  if (kD > 0) cap(ctx, 'REPEATED DEAD ZONES', 120, 960, { font: '500 26px Inter', ls: 12, a: kD, color: COL.bad });
-  const kO = P(t, tOx, tOx + 0.6, slow); if (kO > 0) cap(ctx, 'OXYGEN COLLAPSED', 120, 1005, { font: '500 20px Inter', ls: 10, a: kO, color: 'rgba(255,255,255,0.8)' });
 };
 export default sc;

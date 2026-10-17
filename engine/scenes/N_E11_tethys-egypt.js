@@ -18,9 +18,7 @@ sc.draw = (ctx, t) => {
   ctx.restore();
   W.post(ctx, 3 + t, Math.round(t * 30), { vignette: 0.7, grain: 0.1 });
   const kT = P(t, tSea, tSea + 0.8, slow);
-  cap(ctx, 'TETHYS SEA', 120, 150, { font: '500 28px Inter', ls: 14, a: kT }); cap(ctx, 'LATE EOCENE · 37 MILLION YEARS AGO', 120, 192, { font: '400 18px Inter', ls: 10, a: kT * 0.8, color: 'rgba(255,255,255,0.75)' });
-  const kd = P(t, tDesert, tDesert + 0.6, slow), ep = proj([30.2, 26.9]);
-  if (kd > 0) { hair(ctx, ep[0] + 14, ep[1] + 6, ep[0] + 140, ep[1] + 100, kd, 0.9); cap(ctx, 'EGYPT · NOW DESERT', ep[0] + 152, ep[1] + 112, { font: '500 24px Inter', ls: 10, a: kd, color: COL.gold }); }
-  cap(ctx, 'FULL OF EXACTLY WHAT GREAT WHITES EAT', 1800, 980, { align: 'right', font: '500 20px Inter', ls: 9, a: P(t, tFull, tFull + 0.7, slow) });
-};
+  cap(ctx, 'TETHYS SEA', 120, 150, { font: '500 28px Inter', ls: 14, a: kT });   const kd = P(t, tDesert, tDesert + 0.6, slow), ep = proj([30.2, 26.9]);
+  if (kd > 0) { hair(ctx, ep[0] + 14, ep[1] + 6, ep[0] + 140, ep[1] + 100, kd, 0.9); cap(ctx, 'NOW DESERT', ep[0] + 152, ep[1] + 112, { font: '500 24px Inter', ls: 10, a: kd, color: COL.gold }); }
+  };
 export default sc;

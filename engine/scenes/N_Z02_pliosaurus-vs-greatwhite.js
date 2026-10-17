@@ -18,6 +18,6 @@ sc.draw = (ctx, t) => {
   if (kS > 0) { ctx.save(); ctx.globalAlpha = kS; ctx.strokeStyle = COL.gold; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(sx0, sy + 12); ctx.lineTo(sx0, sy); ctx.lineTo(sx0 + (sx1 - sx0) * clamp(kS * 1.4), sy); if (kS > 0.7) ctx.lineTo(sx1, sy + 12); ctx.stroke(); ctx.restore(); big(ctx, 'SKULL ~2 m', (sx0 + sx1) / 2, sy - 22, { size: 48, align: 'center', a: kS, color: COL.gold }); }
   const kH = P(t, tMan - 0.1, tMan + 0.6);
   if (kH > 0) { const hh = 1.8 * ppm, hx = sx1 + 130, hy = py + 100; ctx.save(); ctx.globalAlpha = kH * 0.95; ctx.fillStyle = '#e8f1f4'; ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 10; ctx.fill(humanPath(hx, hy, hh)); ctx.strokeStyle = '#e8f1f4'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(hx + 50, hy); ctx.lineTo(hx + 50, hy - hh); ctx.moveTo(hx + 42, hy); ctx.lineTo(hx + 58, hy); ctx.moveTo(hx + 42, hy - hh); ctx.lineTo(hx + 58, hy - hh); ctx.stroke(); ctx.restore();
-    cap(ctx, '1.8 m', hx + 70, hy - hh / 2 + 8, { font: '500 20px Inter', ls: 6, a: kH }); cap(ctx, 'LONGER THAN A MAN IS TALL', 1840, hy + 52, { align: 'right', font: '500 18px Inter', ls: 8, a: kH, color: COL.gold }); }
+    cap(ctx, '1.8 m', hx + 70, hy - hh / 2 + 8, { font: '500 20px Inter', ls: 6, a: kH }); }
 };
 export default sc;

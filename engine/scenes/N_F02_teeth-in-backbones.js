@@ -12,9 +12,6 @@ sc.draw = (ctx, t) => {
   for (let i = 0; i < 6; i++) vertebra(ctx, 1160 + i * 120, 600 + Math.sin(i * 0.6) * 24, 52, Math.sin(i * 0.6 - 0.4) * 0.3, kb);
   const kt = P(t, tT, tT + 0.5, ease.outBack), x = 1160 + 3 * 120, y = 600 + Math.sin(1.8) * 24;
   tooth(ctx, x + 6, y - 18, 78 * kt, -0.3, 1, P(t, tB - 0.3, tB + 0.4) * (0.7 + 0.3 * Math.sin(t * 6)));
-  hair(ctx, x + 6, y - 90, x - 60, y - 190, P(t, tB - 0.2, tB + 0.5, ease.outCubic), 0.8);
-  cap(ctx, 'CRETOXYRHINA TOOTH', x - 72, y - 196, { align: 'right', font: '500 20px Inter', ls: 8, a: P(t, tT + 0.2, tT + 0.8, slow) });
-  cap(ctx, 'EMBEDDED IN MOSASAUR BACKBONE', 1520, 780, { align: 'center', font: '500 22px Inter', ls: 8, a: P(t, tB - 0.2, tB + 0.5, slow) });
-  ctx.restore();
+      ctx.restore();
 };
 export default sc;

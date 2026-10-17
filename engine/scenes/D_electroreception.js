@@ -51,9 +51,8 @@ export default {
     ctx.restore();
     // two quiet labels
     const l1 = P(t, at(79.0), at(79.8), slow);
-    if (l1 > 0) { const p = map(0.93, -0.03); hair(ctx, p[0], p[1], p[0] + 60, p[1] - 110, l1, 0.7); cap(ctx, 'SNOUT SENSORS', p[0] + 70, p[1] - 118, { font: '500 20px Inter', ls: 6, a: l1 }); }
+    if (l1 > 0) { const p = map(0.93, -0.03); hair(ctx, p[0], p[1], p[0] + 60, p[1] - 110, l1, 0.7); }
     const l2 = P(t, at(81.2), at(81.9), slow);
-    cap(ctx, 'HEARTBEAT', HX, HY + 150, { align: 'center', font: '500 20px Inter', ls: 6, a: l2, color: '#ffb3a6' });
-    ctx.restore();
+        ctx.restore();
   }
 };

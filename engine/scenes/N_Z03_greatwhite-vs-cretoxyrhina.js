@@ -10,8 +10,6 @@ sc.draw = (ctx, t) => {
   const k = P(t, 0, 0.8, ease.outCubic), L = 720;
   S.animal(ctx, 'greatwhite', { x: lerp(260, 520, k), y: 400, len: L, phase: t * 5, alpha: k });
   S.animal(ctx, 'cretoxyrhina', { x: lerp(1660, 1400, k), y: 400, len: L * 0.98, phase: t * 5 + 1, flip: true, alpha: k, colors: { back: '#232a2e', flank: '#45535a', belly: '#8e9a9c' } });
-  cap(ctx, 'GREAT WHITE', 520, 640, { align: 'center', font: '500 26px Inter', ls: 12, a: k, color: COL.gw }); cap(ctx, 'MODERN', 520, 676, { align: 'center', font: '400 16px Inter', ls: 9, a: k * 0.8 });
-  cap(ctx, 'CRETOXYRHINA', 1400, 640, { align: 'center', font: '500 26px Inter', ls: 12, a: k, color: '#ffa64d' }); cap(ctx, '85 MILLION YEARS AGO', 1400, 676, { align: 'center', font: '400 16px Inter', ls: 9, a: k * 0.8 });
-  [['SAME TORPEDO BODY', tb], ['SAME SLICING TEETH', tt], ['CLOSE TO THE SAME SIZE', ts]].forEach(([s, w], i) => { const a = P(t, w, w + 0.5, slow); big(ctx, s, 960, 820 + i * 80 + (1 - a) * 10, { size: 54, align: 'center', a, ls: 6 }); });
+  cap(ctx, 'GREAT WHITE', 520, 640, { align: 'center', font: '500 26px Inter', ls: 12, a: k, color: COL.gw });   cap(ctx, 'CRETOXYRHINA', 1400, 640, { align: 'center', font: '500 26px Inter', ls: 12, a: k, color: '#ffa64d' });   [['SAME BODY', tb], ['SAME TEETH', tt], ['SAME SIZE', ts]].forEach(([s, w], i) => { const a = P(t, w, w + 0.5, slow); big(ctx, s, 960, 820 + i * 80 + (1 - a) * 10, { size: 54, align: 'center', a, ls: 6 }); });
 };
 export default sc;

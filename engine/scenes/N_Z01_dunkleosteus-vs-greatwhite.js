@@ -14,17 +14,15 @@ sc.draw = (ctx, t) => {
   ctx.save(); ctx.globalAlpha = dIn; S.animal(ctx, 'dunkleosteus', { x: X0 + dl / 2 - (1 - dIn) * 90, y: dy, len: dl, phase: t * 4, colors: { back: '#262c20', flank: '#454e38', belly: '#7c8466', armorTop: 'rgba(58,54,40,0.8)', armorBot: 'rgba(98,92,70,0.6)' } }); ctx.restore();
   measure(ctx, X0, X0 + dl, dBar, P(t, tD - 0.2, tD + 0.9), '~3.5 m', '#fff');
   cap(ctx, 'DUNKLEOSTEUS', X0, dy - 150, { font: '500 24px Inter', ls: 12, a: dIn });
-  cap(ctx, 'SHORT & THICK · LIKE A TUNA', X0, dy - 114, { font: '400 17px Inter', ls: 8, a: P(t, tTuna, tTuna + 0.5, slow), color: 'rgba(255,255,255,0.8)' });
-  ctx.save(); ctx.globalAlpha = gIn; S.animal(ctx, 'greatwhite', { x: X0 + gl / 2 - (1 - gIn) * 90, y: gy, len: gl, phase: t * 5 }); ctx.restore();
+    ctx.save(); ctx.globalAlpha = gIn; S.animal(ctx, 'greatwhite', { x: X0 + gl / 2 - (1 - gIn) * 90, y: gy, len: gl, phase: t * 5 }); ctx.restore();
   measure(ctx, X0, X0 + gl, gBar, P(t, tG - 0.2, tG + 0.9), '4.5 m', COL.gw);
   cap(ctx, 'GREAT WHITE', X0, gBar + 56, { font: '500 24px Inter', ls: 12, a: gIn, color: COL.gw });
-  cap(ctx, 'ABOUT AS HEAVY', X0 + dl + 150, dy + 10, { font: '500 20px Inter', ls: 10, a: P(t, tHeavy, tHeavy + 0.6, slow), color: COL.gw });
-  // on paper: the extra metre
+    // on paper: the extra metre
   const kP = P(t, tPaper, tPaper + 0.7);
-  if (kP > 0) { const x1 = X0 + dl, x2 = X0 + gl; ctx.save(); ctx.globalAlpha = kP; ctx.strokeStyle = 'rgba(255,255,255,0.5)'; ctx.setLineDash([6, 6]); ctx.beginPath(); ctx.moveTo(x1, dBar); ctx.lineTo(x1, gBar); ctx.stroke(); ctx.setLineDash([]); ctx.strokeStyle = COL.gw; ctx.lineWidth = 7; ctx.shadowColor = COL.gw; ctx.shadowBlur = 14; ctx.beginPath(); ctx.moveTo(x1, gBar - 8); ctx.lineTo(lerp(x1, x2, clamp(kP * 1.4)), gBar - 8); ctx.stroke(); ctx.restore(); cap(ctx, '+1 m ON PAPER', (x1 + x2) / 2, gBar - 34, { align: 'center', font: '500 20px Inter', ls: 10, a: kP, color: COL.gw }); }
+  if (kP > 0) { const x1 = X0 + dl, x2 = X0 + gl; ctx.save(); ctx.globalAlpha = kP; ctx.strokeStyle = 'rgba(255,255,255,0.5)'; ctx.setLineDash([6, 6]); ctx.beginPath(); ctx.moveTo(x1, dBar); ctx.lineTo(x1, gBar); ctx.stroke(); ctx.setLineDash([]); ctx.strokeStyle = COL.gw; ctx.lineWidth = 7; ctx.shadowColor = COL.gw; ctx.shadowBlur = 14; ctx.beginPath(); ctx.moveTo(x1, gBar - 8); ctx.lineTo(lerp(x1, x2, clamp(kP * 1.4)), gBar - 8); ctx.stroke(); ctx.restore(); }
   // armor span vs just fish
   const ax = X0 + dl * 0.738, by = dy - dl * 0.25 - 10, kA = P(t, tArmor, tArmor + 0.6), kF = P(t, tFish, tFish + 0.6);
-  if (kA > 0) { ctx.save(); ctx.globalAlpha = kA; ctx.strokeStyle = COL.gold; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(ax, by + 12); ctx.lineTo(ax, by); ctx.lineTo(X0 + dl, by); ctx.lineTo(X0 + dl, by + 12); ctx.stroke(); ctx.restore(); cap(ctx, 'ARMOR: HEAD & SHOULDERS ONLY', X0 + dl + 20, by + 8, { font: '500 20px Inter', ls: 9, a: kA, color: COL.gold }); }
-  if (kF > 0) { ctx.save(); ctx.globalAlpha = kF; ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.setLineDash([9, 7]); ctx.beginPath(); ctx.moveTo(X0 + dl * 0.08, by + 12); ctx.lineTo(X0 + dl * 0.08, by); ctx.lineTo(ax - 14, by); ctx.lineTo(ax - 14, by + 12); ctx.stroke(); ctx.restore(); cap(ctx, 'BEHIND THAT: JUST FISH', (X0 + dl * 0.08 + ax) / 2, by - 22, { align: 'center', font: '500 20px Inter', ls: 9, a: kF }); }
+  if (kA > 0) { ctx.save(); ctx.globalAlpha = kA; ctx.strokeStyle = COL.gold; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.moveTo(ax, by + 12); ctx.lineTo(ax, by); ctx.lineTo(X0 + dl, by); ctx.lineTo(X0 + dl, by + 12); ctx.stroke(); ctx.restore(); }
+  if (kF > 0) { ctx.save(); ctx.globalAlpha = kF; ctx.strokeStyle = '#fff'; ctx.lineWidth = 2.5; ctx.setLineDash([9, 7]); ctx.beginPath(); ctx.moveTo(X0 + dl * 0.08, by + 12); ctx.lineTo(X0 + dl * 0.08, by); ctx.lineTo(ax - 14, by); ctx.lineTo(ax - 14, by + 12); ctx.stroke(); ctx.restore(); }
 };
 export default sc;

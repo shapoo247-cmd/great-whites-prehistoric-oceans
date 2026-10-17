@@ -12,7 +12,6 @@ sc.draw = (ctx, t) => {
   ctx.strokeStyle = COL.ok; ctx.lineWidth = 5; ctx.shadowColor = COL.ok; ctx.shadowBlur = 14; ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(lerp(x0, x1, k), y); ctx.stroke(); ctx.shadowBlur = 0;
   ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(lerp(x0, x1, k), y, 7, 0, 7); ctx.fill(); ctx.beginPath(); ctx.arc(x0, y, 5, 0, 7); ctx.fill();
   big(ctx, `~${(5 * k).toFixed(1)} MILLION YEARS`, 960, 880, { size: 64, align: 'center', a: P(t, tFive - 0.1, tFive + 0.4, slow) });
-  cap(ctx, 'TO RECOVER', 960, 975, { align: 'center', font: '500 22px Inter', ls: 12, a: P(t, tFive + 0.6, tFive + 1.1, slow) });
-  ctx.restore();
+    ctx.restore();
 };
 export default sc;

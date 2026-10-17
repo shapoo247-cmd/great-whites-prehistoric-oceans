@@ -20,13 +20,11 @@ sc.draw = (ctx, t) => {
   // unlabeled "every sea it has known" mark
   const kk = P(t, tFar - 0.1, tFar + 0.7, slow);
   if (kk > 0) { const y = yB - (yB - yT) * known * 0.92 + 40; ctx.save(); ctx.globalAlpha *= kk; ctx.strokeStyle = COL.gw; ctx.lineWidth = 2; ctx.setLineDash([8, 8]); ctx.beginPath(); ctx.moveTo(x - w / 2 - 20, y); ctx.lineTo(x - 300, y); ctx.stroke(); ctx.restore();
-    cap(ctx, 'ANY SEA IT HAS EVER SWUM', x - 320, y + 8, { align: 'right', font: '500 20px Inter', ls: 6, a: kk, color: COL.gw });
-    ctx.save(); ctx.globalAlpha *= kk; ctx.strokeStyle = COL.bad; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x - 190, y - 20); ctx.lineTo(x - 190, y - (y - yLevel) + 16); ctx.stroke(); ctx.restore(); }
+        ctx.save(); ctx.globalAlpha *= kk; ctx.strokeStyle = COL.bad; ctx.lineWidth = 3; ctx.beginPath(); ctx.moveTo(x - 190, y - 20); ctx.lineTo(x - 190, y - (y - yLevel) + 16); ctx.stroke(); ctx.restore(); }
   // readout: 40°C then 104°F
   const aC = P(t, t40 - 0.1, t40 + 0.4, slow), aF = P(t, tF - 0.9, tF - 0.4, slow);
   big(ctx, '40°C', 1180, 470, { size: 170, align: 'center', a: aC });
   big(ctx, '104°F', 1180, 620, { size: 100, align: 'center', a: aF, color: COL.warm });
-  cap(ctx, 'TROPICAL SURFACE WATER', 1180, 300, { align: 'center', font: '500 20px Inter', ls: 10, a: aC * 0.9 });
-  ctx.restore();
+    ctx.restore();
 };
 export default sc;

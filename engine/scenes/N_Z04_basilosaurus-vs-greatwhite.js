@@ -12,8 +12,7 @@ sc.draw = (ctx, t) => {
   const k15 = P(t, t15 - 0.3, t15 + 0.8), k18 = P(t, t15 + 0.5, t15 + 1.2);
   measure(ctx, X0, X0 + 15 * ppm, by + 90, k15, '', '#fff'); if (k18 > 0) measure(ctx, X0 + 15 * ppm, X0 + 18 * ppm, by + 90, k18, '', '#fff', { dash: [8, 6] });
   big(ctx, '15–18 m', X0 + 16.5 * ppm, by + 170, { size: 64, align: 'center', a: k15 });
-  cap(ctx, 'BASILOSAURUS', 1790, by - 120, { align: 'right', font: '500 26px Inter', ls: 12, a: bIn }); cap(ctx, 'SERPENT-SHAPED WHALE', 1790, by - 84, { align: 'right', font: '400 16px Inter', ls: 9, a: bIn * 0.8 });
-  S.animal(ctx, 'greatwhite', { x: X0 + gl / 2, y: gy, len: gl, phase: t * 5, alpha: gIn });
+  cap(ctx, 'BASILOSAURUS', 1790, by - 120, { align: 'right', font: '500 26px Inter', ls: 12, a: bIn });   S.animal(ctx, 'greatwhite', { x: X0 + gl / 2, y: gy, len: gl, phase: t * 5, alpha: gIn });
   S.animal(ctx, 'dorudon', { x: X0 + gl + 160 + gl / 2, y: gy + 10, len: gl, phase: t * 4, alpha: gIn, colors: { back: '#2a302c', flank: '#4c5650', belly: '#9aa39a' } });
   measure(ctx, X0, X0 + gl, gy + 110, P(t, 1.2, 2.0), '', COL.gw); big(ctx, '5 m', X0 + gl / 2, gy + 190, { size: 46, align: 'center', color: COL.gw, a: P(t, 1.6, 2.1) });
   measure(ctx, X0 + gl + 160, X0 + 2 * gl + 160, gy + 110, P(t, 1.4, 2.2), '', COL.gold); big(ctx, '~5 m', X0 + gl * 1.5 + 160, gy + 190, { size: 46, align: 'center', color: COL.gold, a: P(t, 1.8, 2.3) });

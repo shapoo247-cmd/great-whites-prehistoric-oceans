@@ -20,10 +20,9 @@ sc.draw = (ctx, t) => {
   W.post(ctx, 3 + t, Math.round(t * 30), { vignette: 0.7, grain: 0.1 });
   const kT = P(t, tSea, tSea + 0.8, slow);
   cap(ctx, 'WESTERN INTERIOR SEAWAY', 120, 150, { font: '500 28px Inter', ls: 14, a: kT });
-  cap(ctx, 'LATE CRETACEOUS · NORTH AMERICA', 120, 192, { font: '400 18px Inter', ls: 10, a: kT * 0.8, color: 'rgba(255,255,255,0.75)' });
-  const c = proj([-103, 46]), kC = P(t, tCreto, tCreto + 0.7, slow);
+    const c = proj([-103, 46]), kC = P(t, tCreto, tCreto + 0.7, slow);
   if (kC > 0) { hair(ctx, c[0] + 20, c[1] + 10, c[0] + 140, c[1] - 110, kC, 0.9); cap(ctx, 'CRETOXYRHINA', c[0] + 152, c[1] - 104, { font: '500 24px Inter', ls: 10, a: kC, color: COL.gw }); }
   const kk = P(t, tKansas, tKansas + 0.6, slow), kp = proj([-98, 38.7]); pin(ctx, kp[0], kp[1], kk, COL.gold, (t * 0.6) % 1);
-  if (kk > 0) { hair(ctx, kp[0] + 14, kp[1] + 10, kp[0] + 130, kp[1] + 120, kk, 0.9); cap(ctx, 'KANSAS', kp[0] + 142, kp[1] + 134, { font: '500 24px Inter', ls: 10, a: kk, color: COL.gold }); cap(ctx, 'NEARLY COMPLETE SKELETONS', kp[0] + 142, kp[1] + 168, { font: '400 17px Inter', ls: 8, a: kk * 0.85 }); }
+  if (kk > 0) { hair(ctx, kp[0] + 14, kp[1] + 10, kp[0] + 130, kp[1] + 120, kk, 0.9); cap(ctx, 'KANSAS', kp[0] + 142, kp[1] + 134, { font: '500 24px Inter', ls: 10, a: kk, color: COL.gold }); }
 };
 export default sc;
