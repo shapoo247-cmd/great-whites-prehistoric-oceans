@@ -1,0 +1,1046 @@
+{
+ "clips": [
+  {
+   "id": "SC01",
+   "rel": "scenes/SC01_cruising-and-rising.mp4",
+   "start": 0.0,
+   "dur": 16.3,
+   "kind": "scene",
+   "what": "Story: great white cruising a murky sea, Dunkleosteus rises from below"
+  },
+  {
+   "id": "O01",
+   "rel": "overlays/O01_stamp-late-devonian.mov",
+   "start": 1.2,
+   "dur": 5.4,
+   "kind": "overlay",
+   "what": "Era stamp: LATE DEVONIAN \u00b7 370 MILLION YEARS AGO"
+  },
+  {
+   "id": "S01",
+   "rel": "species-cards/S01_great-white.mov",
+   "start": 7.3,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: great white (5 m, over a ton)"
+  },
+  {
+   "id": "SC02",
+   "rel": "scenes/SC02_dunkleosteus-lunge.mp4",
+   "start": 16.2,
+   "dur": 12.2,
+   "kind": "scene",
+   "what": "Story: Dunkleosteus lunges, jaws snap, great white twists away"
+  },
+  {
+   "id": "E01",
+   "rel": "overlays/E01_jaw-speed.mov",
+   "start": 18.0,
+   "dur": 7.4,
+   "kind": "overlay",
+   "what": "Jaw snap 1/50 s + suction"
+  },
+  {
+   "id": "T00",
+   "rel": "tier-system/T00_premise-board.mp4",
+   "start": 29.2,
+   "dur": 11.3,
+   "kind": "tier",
+   "what": "Premise board: six oceans, THRIVES / DIES pulses, dive to Pliocene"
+  },
+  {
+   "id": "C01",
+   "rel": "title-cards/TITLE_01_late-devonian.mp4",
+   "start": 40.5,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Late Devonian (Ocean 1 of 6)"
+  },
+  {
+   "id": "SC03",
+   "rel": "scenes/SC03_great-white-circles-dunkleosteus-backs-off.mp4",
+   "start": 41.6,
+   "dur": 12.2,
+   "kind": "scene",
+   "what": "Story: great white circles low, Dunkleosteus backs off"
+  },
+  {
+   "id": "S02",
+   "rel": "species-cards/S02_dunkleosteus.mov",
+   "start": 47.5,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: Dunkleosteus"
+  },
+  {
+   "id": "Z01",
+   "rel": "size-comparisons/Z01_dunkleosteus-vs-greatwhite.mp4",
+   "start": 54.19,
+   "dur": 20.6,
+   "kind": "full",
+   "what": "Size check: Dunkleosteus 3.5 m vs great white 4.5 m, armor = head & shoulders"
+  },
+  {
+   "id": "E02",
+   "rel": "overlays/E02_electroreception.mov",
+   "start": 78.6,
+   "dur": 5.6,
+   "kind": "overlay",
+   "what": "Electroreception: snout sensors feel a heartbeat"
+  },
+  {
+   "id": "E03",
+   "rel": "full-frame/E03_black-shale-dead-zones.mp4",
+   "start": 86.9,
+   "dur": 6.5,
+   "kind": "full",
+   "what": "Black shale strata: repeated dead zones, oxygen collapsed"
+  },
+  {
+   "id": "E04",
+   "rel": "overlays/E04_swim-to-breathe.mov",
+   "start": 93.3,
+   "dur": 12.2,
+   "kind": "overlay",
+   "what": "Swim = breathe; warm body burns oxygen; dead zones spread"
+  },
+  {
+   "id": "T01",
+   "rel": "tier-system/T01_devonian_SURVIVES.mp4",
+   "start": 105.56,
+   "dur": 6.1,
+   "kind": "tier",
+   "what": "Tier: Devonian \u2192 SURVIVES (drop on \"survives\")"
+  },
+  {
+   "id": "C02",
+   "rel": "title-cards/TITLE_02_early-triassic.mp4",
+   "start": 117.3,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Early Triassic (Ocean 2 of 6)"
+  },
+  {
+   "id": "SC04",
+   "rel": "scenes/SC04_triassic-hot-water-great-white-slows.mp4",
+   "start": 119.2,
+   "dur": 9.4,
+   "kind": "scene",
+   "what": "Story: hot Triassic water, great white slows, gills working"
+  },
+  {
+   "id": "E05",
+   "rel": "overlays/E05_great-dying-80-90.mov",
+   "start": 128.5,
+   "dur": 6.8,
+   "kind": "overlay",
+   "what": "Great Dying: 80\u201390% of marine species gone"
+  },
+  {
+   "id": "E06",
+   "rel": "overlays/E06_heat-40C-104F.mov",
+   "start": 135.3,
+   "dur": 9.7,
+   "kind": "overlay",
+   "what": "Heat: 40\u00b0C / 104\u00b0F tropical surface water"
+  },
+  {
+   "id": "E07",
+   "rel": "overlays/E07_oxygen-supply-vs-demand.mov",
+   "start": 145.4,
+   "dur": 8.8,
+   "kind": "overlay",
+   "what": "Oxygen supply falls, body demand rises"
+  },
+  {
+   "id": "SC05",
+   "rel": "scenes/SC05_dive-into-dead-layer-turns-back.mp4",
+   "start": 154.3,
+   "dur": 16.6,
+   "kind": "scene",
+   "what": "Story: dive into the dead layer, turns back toward the light"
+  },
+  {
+   "id": "E08",
+   "rel": "overlays/E08_dive-profile-dead-layer.mov",
+   "start": 154.3,
+   "dur": 22.3,
+   "kind": "overlay",
+   "what": "Dive profile: deeper, dead layer, turn back to the light"
+  },
+  {
+   "id": "E09",
+   "rel": "overlays/E09_cooler-water-far-away.mov",
+   "start": 183.6,
+   "dur": 9.3,
+   "kind": "overlay",
+   "what": "Cooler water far north/south, long swim, reserves drain"
+  },
+  {
+   "id": "T02",
+   "rel": "tier-system/T02_triassic_DIES.mp4",
+   "start": 193.26,
+   "dur": 6.1,
+   "kind": "tier",
+   "what": "Tier: Triassic \u2192 DIES (drop on \"dies\")"
+  },
+  {
+   "id": "O02",
+   "rel": "overlays/O02_five-million-years-recovery.mov",
+   "start": 200.0,
+   "dur": 3.6,
+   "kind": "overlay",
+   "what": "~5 million years to recover"
+  },
+  {
+   "id": "C03",
+   "rel": "title-cards/TITLE_03_late-jurassic.mp4",
+   "start": 205.43,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Late Jurassic (Ocean 3 of 6)"
+  },
+  {
+   "id": "SC07",
+   "rel": "scenes/SC07_new-great-white-drops-in-hunting.mp4",
+   "start": 207.4,
+   "dur": 9.0,
+   "kind": "scene",
+   "what": "Story: a new great white drops into the Jurassic, already hunting"
+  },
+  {
+   "id": "SC08",
+   "rel": "scenes/SC08_ichthyosaur-breathes-great-white-ambush.mp4",
+   "start": 213.0,
+   "dur": 19.8,
+   "kind": "scene",
+   "what": "Story: ichthyosaur breathes, great white strikes from below"
+  },
+  {
+   "id": "S03",
+   "rel": "species-cards/S03_ichthyosaur.mov",
+   "start": 216.0,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: ichthyosaur"
+  },
+  {
+   "id": "G02",
+   "rel": "overlays/G02_air-breathers-must-surface.mov",
+   "start": 232.9,
+   "dur": 8.6,
+   "kind": "overlay",
+   "what": "Ichthyosaurs must surface to breathe, shark waits below"
+  },
+  {
+   "id": "SC09",
+   "rel": "scenes/SC09_pliosaurus-takes-the-kill.mp4",
+   "start": 241.5,
+   "dur": 15.2,
+   "kind": "scene",
+   "what": "Story: blood carries, Pliosaurus takes the kill, great white lets go"
+  },
+  {
+   "id": "Z02",
+   "rel": "size-comparisons/Z02_pliosaurus-vs-greatwhite.mp4",
+   "start": 257.5,
+   "dur": 7.8,
+   "kind": "full",
+   "what": "Size check: Pliosaurus up to 12 m, skull ~2 m vs person"
+  },
+  {
+   "id": "F01",
+   "rel": "overlays/F01_pliosaurus-tooth-marks.mov",
+   "start": 264.1,
+   "dur": 7.6,
+   "kind": "overlay",
+   "what": "Evidence: Pliosaurus tooth marks on bones"
+  },
+  {
+   "id": "SC10",
+   "rel": "scenes/SC10_great-white-circles-once-turns-away.mp4",
+   "start": 271.5,
+   "dur": 5.4,
+   "kind": "scene",
+   "what": "Story: great white circles once, turns away"
+  },
+  {
+   "id": "S04",
+   "rel": "species-cards/S04_pliosaurus.mov",
+   "start": 271.6,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: Pliosaurus (optional, if Z02 is skipped use 4:17.5)"
+  },
+  {
+   "id": "T03",
+   "rel": "tier-system/T03_jurassic_SURVIVES.mp4",
+   "start": 284.6,
+   "dur": 6.1,
+   "kind": "tier",
+   "what": "Tier: Jurassic \u2192 SURVIVES"
+  },
+  {
+   "id": "C04",
+   "rel": "title-cards/TITLE_04_late-cretaceous.mp4",
+   "start": 295.23,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Late Cretaceous (Ocean 4 of 6)"
+  },
+  {
+   "id": "SC11",
+   "rel": "scenes/SC11_great-white-vs-cretoxyrhina-over-the-carcass.mp4",
+   "start": 297.4,
+   "dur": 39.4,
+   "kind": "scene",
+   "what": "Story: great white vs Cretoxyrhina fight over the carcass"
+  },
+  {
+   "id": "Z03",
+   "rel": "size-comparisons/Z03_greatwhite-vs-cretoxyrhina.mp4",
+   "start": 309.0,
+   "dur": 5.5,
+   "kind": "full",
+   "what": "Checklist: same body, teeth, size (great white vs Cretoxyrhina)"
+  },
+  {
+   "id": "E10",
+   "rel": "full-frame/E10_western-interior-seaway-map.mp4",
+   "start": 337.4,
+   "dur": 12.7,
+   "kind": "full",
+   "what": "Map: Western Interior Seaway, Cretoxyrhina, Kansas"
+  },
+  {
+   "id": "F02",
+   "rel": "overlays/F02_teeth-in-mosasaur-backbones.mov",
+   "start": 349.9,
+   "dur": 4.6,
+   "kind": "overlay",
+   "what": "Evidence: teeth embedded in mosasaur backbones"
+  },
+  {
+   "id": "SC12",
+   "rel": "scenes/SC12_tylosaurus-slams-the-carcass-sharks-scatter.mp4",
+   "start": 360.3,
+   "dur": 11.4,
+   "kind": "scene",
+   "what": "Story: Tylosaurus slams the carcass, both sharks scatter"
+  },
+  {
+   "id": "S06",
+   "rel": "species-cards/S06_tylosaurus.mov",
+   "start": 370.2,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: Tylosaurus"
+  },
+  {
+   "id": "F03",
+   "rel": "overlays/F03_tylosaurus-stomach.mov",
+   "start": 374.4,
+   "dur": 6.2,
+   "kind": "overlay",
+   "what": "Evidence: Tylosaurus stomach contents"
+  },
+  {
+   "id": "T04",
+   "rel": "tier-system/T04_cretaceous_BARELY.mp4",
+   "start": 378.72,
+   "dur": 4.65,
+   "kind": "tier",
+   "what": "Tier: Cretaceous \u2192 BARELY (drop on \"Barely\")"
+  },
+  {
+   "id": "O03",
+   "rel": "overlays/O03_asteroid-impact.mov",
+   "start": 383.4,
+   "dur": 4.6,
+   "kind": "overlay",
+   "what": "Asteroid impact, mosasaurs vanish"
+  },
+  {
+   "id": "C05",
+   "rel": "title-cards/TITLE_05_late-eocene.mp4",
+   "start": 392.84,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Late Eocene (Ocean 5 of 6)"
+  },
+  {
+   "id": "SC13",
+   "rel": "scenes/SC13_great-white-takes-the-whale-calf.mp4",
+   "start": 398.4,
+   "dur": 15.6,
+   "kind": "scene",
+   "what": "Story: great white takes the whale calf, clean kill"
+  },
+  {
+   "id": "E11",
+   "rel": "full-frame/E11_tethys-sea-egypt-map.mp4",
+   "start": 414.8,
+   "dur": 8.7,
+   "kind": "full",
+   "what": "Map: Tethys Sea, Egypt now desert"
+  },
+  {
+   "id": "S07",
+   "rel": "species-cards/S07_dorudon.mov",
+   "start": 423.5,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: Dorudon"
+  },
+  {
+   "id": "G04",
+   "rel": "overlays/G04_dorudon-warm-surfaces.mov",
+   "start": 429.6,
+   "dur": 7.2,
+   "kind": "overlay",
+   "what": "Dorudon: warm-blooded, surfaces to breathe, familiar prey"
+  },
+  {
+   "id": "G05",
+   "rel": "overlays/G05_no-mosasaurs-no-pliosaurs.mov",
+   "start": 436.2,
+   "dur": 7.9,
+   "kind": "overlay",
+   "what": "No mosasaurs, no pliosaurs"
+  },
+  {
+   "id": "SC14",
+   "rel": "scenes/SC14_basilosaurus-slides-past-takes-a-calf.mp4",
+   "start": 444.8,
+   "dur": 11.6,
+   "kind": "scene",
+   "what": "Story: Basilosaurus slides past the shark and takes a calf"
+  },
+  {
+   "id": "Z04",
+   "rel": "size-comparisons/Z04_basilosaurus-vs-greatwhite-vs-dorudon.mp4",
+   "start": 455.8,
+   "dur": 4.9,
+   "kind": "full",
+   "what": "Size check: Basilosaurus 15\u201318 m vs great white and Dorudon"
+  },
+  {
+   "id": "F04",
+   "rel": "overlays/F04_basilosaurus-stomach-and-bite-marks.mov",
+   "start": 460.7,
+   "dur": 6.3,
+   "kind": "overlay",
+   "what": "Evidence: young Dorudon in stomach, calf skulls with bite marks"
+  },
+  {
+   "id": "G06",
+   "rel": "overlays/G06_hunts-calves-not-sharks.mov",
+   "start": 466.8,
+   "dur": 3.4,
+   "kind": "overlay",
+   "what": "Basilosaurus hunts calves, not sharks"
+  },
+  {
+   "id": "F05",
+   "rel": "overlays/F05_shark-teeth-among-bones.mov",
+   "start": 472.7,
+   "dur": 5.4,
+   "kind": "overlay",
+   "what": "Evidence: shark teeth among its bones"
+  },
+  {
+   "id": "T05",
+   "rel": "tier-system/T05_eocene_THRIVES.mp4",
+   "start": 482.33,
+   "dur": 6.1,
+   "kind": "tier",
+   "what": "Tier: Eocene \u2192 THRIVES"
+  },
+  {
+   "id": "C06",
+   "rel": "title-cards/TITLE_06_early-pliocene.mp4",
+   "start": 490.11,
+   "dur": 2.4,
+   "kind": "title",
+   "what": "Title card: Early Pliocene (Ocean 6 of 6)"
+  },
+  {
+   "id": "SC15",
+   "rel": "scenes/SC15_megalodon-rises-into-the-blood.mp4",
+   "start": 492.2,
+   "dur": 24.6,
+   "kind": "scene",
+   "what": "Story: megalodon rises into the blood, carcass jerks sideways"
+  },
+  {
+   "id": "S09",
+   "rel": "species-cards/S09_megalodon.mov",
+   "start": 511.4,
+   "dur": 5.0,
+   "kind": "overlay",
+   "what": "Species ID: megalodon"
+  },
+  {
+   "id": "Z05",
+   "rel": "size-comparisons/Z05_MEGALODON-payoff-16m-three-great-whites.mp4",
+   "start": 517.0,
+   "dur": 11.6,
+   "kind": "full",
+   "what": "PAYOFF: megalodon ~16 m = three great whites"
+  },
+  {
+   "id": "E12",
+   "rel": "full-frame/E12_great-whites-spread-worldwide-map.mp4",
+   "start": 537.1,
+   "dur": 9.2,
+   "kind": "full",
+   "what": "Map: great whites spread from the Pacific to worldwide"
+  },
+  {
+   "id": "E13",
+   "rel": "overlays/E13_tooth-chemistry-overlap.mov",
+   "start": 546.2,
+   "dur": 8.9,
+   "kind": "overlay",
+   "what": "Tooth chemistry: overlapping food-chain levels"
+  },
+  {
+   "id": "E14",
+   "rel": "overlays/E14_diet-megalodon-vs-great-white.mov",
+   "start": 555.3,
+   "dur": 12.6,
+   "kind": "overlay",
+   "what": "Diet: megalodon big meals vs great white flexible"
+  },
+  {
+   "id": "E15",
+   "rel": "overlays/E15_timeline-megalodon-gone-3-6-mya.mov",
+   "start": 568.0,
+   "dur": 16.3,
+   "kind": "overlay",
+   "what": "Timeline: megalodon gone ~3.6 MYA, cause debated"
+  },
+  {
+   "id": "T06",
+   "rel": "tier-system/T06_pliocene_SURVIVES.mp4",
+   "start": 584.5,
+   "dur": 8.6,
+   "kind": "tier",
+   "what": "Tier: Pliocene \u2192 SURVIVES"
+  },
+  {
+   "id": "T07",
+   "rel": "tier-system/T07_final-board_ENDING-14s.mp4",
+   "start": 594.3,
+   "dur": 14.0,
+   "kind": "tier",
+   "what": "Final board (to the end of the VO)"
+  }
+ ],
+ "paragraph_slots": [
+  {
+   "p": 0,
+   "start": 0.07,
+   "end": 6.82,
+   "vo": "A modern great white is cruising through a murky sea, 370 million years before its species should exist."
+  },
+  {
+   "p": 1,
+   "start": 7.44,
+   "end": 9.92,
+   "vo": "Five meters long. Over a ton."
+  },
+  {
+   "p": 2,
+   "start": 10.88,
+   "end": 15.34,
+   "vo": "And something is rising underneath it \u2014 a fish with its head sealed in bone."
+  },
+  {
+   "p": 3,
+   "start": 16.27,
+   "end": 17.11,
+   "vo": "It lunges."
+  },
+  {
+   "p": 4,
+   "start": 17.98,
+   "end": 28.17,
+   "vo": "Its jaws snap open in about a fiftieth of a second, fast enough to suck prey straight in. The great white twists away, and blades of bone close on empty water."
+  },
+  {
+   "p": 5,
+   "start": 29.23,
+   "end": 40.51,
+   "vo": "This is the first of six prehistoric oceans. Some it rules. One it can't survive at all. And in the last, it meets the only shark that ever made a great white look small."
+  },
+  {
+   "p": 6,
+   "start": 41.7,
+   "end": 46.55,
+   "vo": "The great white doesn't flee. It circles low, under the armor, and comes back."
+  },
+  {
+   "p": 7,
+   "start": 47.56,
+   "end": 50.47,
+   "vo": "This time, Dunkleosteus is the one that backs off."
+  },
+  {
+   "p": 8,
+   "start": 51.5,
+   "end": 62.47,
+   "vo": "The armored fish is Dunkleosteus. A 2023 study puts it at around three and a half meters, short and thick like a tuna \u2014 about as heavy as a four-and-a-half-meter great white."
+  },
+  {
+   "p": 9,
+   "start": 63.16,
+   "end": 82.24,
+   "vo": "On paper, the great white is slightly bigger. In practice, the gap is wider than that. The armor covers only the head and shoulders. Behind that, Dunkleosteus is just fish. And in water this murky, the great white doesn't need to see. Sensors in its snout pick up the electrical pulse of a beating heart."
+  },
+  {
+   "p": 10,
+   "start": 83.07,
+   "end": 84.24,
+   "vo": "And there's plenty to eat."
+  },
+  {
+   "p": 11,
+   "start": 85.13,
+   "end": 102.2,
+   "vo": "The problem is the water. Late Devonian rocks are full of black shale, the record of repeated dead zones where oxygen collapsed. A great white can't rest and pump water over its gills. It has to keep swimming to breathe, and its warm body burns through oxygen faster than most fish."
+  },
+  {
+   "p": 12,
+   "start": 103.0,
+   "end": 105.88,
+   "vo": "When those dead zones spread, there's nowhere to hide."
+  },
+  {
+   "p": 13,
+   "start": 107.06,
+   "end": 109.02000000000001,
+   "vo": "It survives. For now."
+  },
+  {
+   "p": 14,
+   "start": 110.47999999999999,
+   "end": 117.3,
+   "vo": "Those dead zones are a warning. About 120 million years later, the entire ocean turns against it."
+  },
+  {
+   "p": 15,
+   "start": 119.28,
+   "end": 121.39,
+   "vo": "The surface water feels like a hot tub."
+  },
+  {
+   "p": 16,
+   "start": 122.5,
+   "end": 127.66,
+   "vo": "The great white slows. Its gills are working harder, and every pass brings in less."
+  },
+  {
+   "p": 17,
+   "start": 128.65,
+   "end": 141.34,
+   "vo": "This is the ocean after the Great Dying. Somewhere between 80 and 90 percent of marine species are gone, and fossil teeth record tropical surface water near 40\u00b0C \u2014 104\u00b0F."
+  },
+  {
+   "p": 18,
+   "start": 141.94,
+   "end": 153.79,
+   "vo": "That's far hotter than any sea it has ever swum. Its warm body was built for cold water. Here, it can't shed heat, and warm water holds less oxygen while a warm body demands more."
+  },
+  {
+   "p": 19,
+   "start": 154.4,
+   "end": 156.95,
+   "vo": "So it dives, looking for cooler water."
+  },
+  {
+   "p": 20,
+   "start": 157.91,
+   "end": 169.48,
+   "vo": "Deeper. Then deeper still. It doesn't get cooler. It gets worse. The shark drops into a dead layer with almost no oxygen, gills burning, and turns hard back toward the light."
+  },
+  {
+   "p": 21,
+   "start": 170.34,
+   "end": 176.25,
+   "vo": "In this ocean, the heat reaches far below the surface, and oxygen-starved water spreads through the deep."
+  },
+  {
+   "p": 22,
+   "start": 176.88,
+   "end": 183.2,
+   "vo": "And there's almost nothing worth eating. The big predators are gone. Most of what survives has fled the tropics."
+  },
+  {
+   "p": 23,
+   "start": 183.76,
+   "end": 192.68,
+   "vo": "Cooler water exists far to the north and south. But it's a long swim through empty sea, and a warm-bodied shark this size burns through its reserves fast."
+  },
+  {
+   "p": 24,
+   "start": 193.67,
+   "end": 198.56,
+   "vo": "This is where the great white dies. Not to a predator. To the ocean itself."
+  },
+  {
+   "p": 25,
+   "start": 200.14,
+   "end": 205.43,
+   "vo": "The seas take about 5 million years to recover. And when they do, reptiles own them."
+  },
+  {
+   "p": 26,
+   "start": 207.47,
+   "end": 212.35,
+   "vo": "A new great white drops in, 100 million years later. It's already hunting."
+  },
+  {
+   "p": 27,
+   "start": 213.13,
+   "end": 220.78,
+   "vo": "Above it, a shape breaks the surface to breathe. An ichthyosaur. Dolphin-shaped, fast, and about as long as the shark."
+  },
+  {
+   "p": 28,
+   "start": 221.36,
+   "end": 230.34,
+   "vo": "The great white comes straight up from below, the way it hits seals today. It connects behind the flipper. The ichthyosaur rolls, and the water clouds red."
+  },
+  {
+   "p": 29,
+   "start": 231.3,
+   "end": 240.87,
+   "vo": "That ambush works here. Ichthyosaurs breathe air. Sooner or later, every one of them has to come up, and a shark waiting in the dark below gets the first strike."
+  },
+  {
+   "p": 30,
+   "start": 241.54,
+   "end": 243.31,
+   "vo": "And this sea is full of food."
+  },
+  {
+   "p": 31,
+   "start": 244.42,
+   "end": 245.6,
+   "vo": "But blood carries."
+  },
+  {
+   "p": 32,
+   "start": 246.5,
+   "end": 248.75,
+   "vo": "Something much bigger is coming up the trail."
+  },
+  {
+   "p": 33,
+   "start": 249.87,
+   "end": 253.51,
+   "vo": "Then jaws close on the carcass, one body-length from the shark."
+  },
+  {
+   "p": 34,
+   "start": 254.06,
+   "end": 255.37,
+   "vo": "The great white lets go."
+  },
+  {
+   "p": 35,
+   "start": 256.37,
+   "end": 263.51,
+   "vo": "Pliosaurus. Up to 12 meters long, with a skull about two meters from snout to back \u2014 longer than a man is tall."
+  },
+  {
+   "p": 36,
+   "start": 264.19,
+   "end": 270.55,
+   "vo": "Fossil bones from this sea carry its tooth marks: ichthyosaurs, plesiosaurs, even other pliosaurs."
+  },
+  {
+   "p": 37,
+   "start": 271.6,
+   "end": 275.28,
+   "vo": "The shark circles once at the edge of the red water, then turns away."
+  },
+  {
+   "p": 38,
+   "start": 276.23,
+   "end": 285.15,
+   "vo": "That's the pattern here. The great white can still catch ichthyosaurs. It just can't always keep them. Every stolen kill is a meal it has to hunt again."
+  },
+  {
+   "p": 39,
+   "start": 286.09000000000003,
+   "end": 288.94,
+   "vo": "It survives. But it just lost the top spot."
+  },
+  {
+   "p": 40,
+   "start": 290.51,
+   "end": 295.23,
+   "vo": "The next ocean is more crowded. And one of the hunters in it looks a lot like a great white."
+  },
+  {
+   "p": 41,
+   "start": 297.4,
+   "end": 302.89,
+   "vo": "Another great white drops in, 65 million years later. And it's already fighting."
+  },
+  {
+   "p": 42,
+   "start": 303.76,
+   "end": 313.67,
+   "vo": "It's tearing into a dead mosasaur when a second shark slams into the carcass from the other side. Same torpedo body. Same slicing teeth. Close to the same size."
+  },
+  {
+   "p": 43,
+   "start": 314.33,
+   "end": 323.16,
+   "vo": "They collide over the meat. Jaws snap inches apart. The great white twists, rakes a flank, and the other shark rips free and circles back."
+  },
+  {
+   "p": 44,
+   "start": 324.21,
+   "end": 333.8,
+   "vo": "The second pass is harder. Teeth drag across skin on both sides. Then both sharks peel away, bleeding, and settle at opposite ends of the carcass."
+  },
+  {
+   "p": 45,
+   "start": 334.44,
+   "end": 336.65999999999997,
+   "vo": "Neither one wins. They split it."
+  },
+  {
+   "p": 46,
+   "start": 337.59000000000003,
+   "end": 343.79,
+   "vo": "This warm, shallow sea runs straight through the middle of North America, and the other shark is Cretoxyrhina."
+  },
+  {
+   "p": 47,
+   "start": 344.38,
+   "end": 353.08,
+   "vo": "Nearly complete skeletons from Kansas show a body built almost exactly like a great white's. Its teeth have been found embedded in mosasaur backbones."
+  },
+  {
+   "p": 48,
+   "start": 354.07,
+   "end": 359.54,
+   "vo": "That's the cost of meeting an equal. Every carcass is shared. Every hunt has a rival."
+  },
+  {
+   "p": 49,
+   "start": 360.32,
+   "end": 362.23,
+   "vo": "And a shared meal draws attention."
+  },
+  {
+   "p": 50,
+   "start": 363.34,
+   "end": 369.63,
+   "vo": "A bony snout slams into the carcass from below, hard enough to knock it sideways. Both sharks scatter."
+  },
+  {
+   "p": 51,
+   "start": 370.21,
+   "end": 378.92,
+   "vo": "Tylosaurus. A mosasaur, a giant marine lizard. One was found with a plesiosaur in its stomach. Another may have eaten a shark."
+  },
+  {
+   "p": 52,
+   "start": 380.22,
+   "end": 382.11,
+   "vo": "It survives. Barely."
+  },
+  {
+   "p": 53,
+   "start": 383.72,
+   "end": 392.84000000000003,
+   "vo": "Then the asteroid hits. The mosasaurs vanish. And over the next 30 million years, the ocean fills with exactly the prey great whites are built for."
+  },
+  {
+   "p": 54,
+   "start": 394.47,
+   "end": 400.21,
+   "vo": "A new great white drops in, nearly 50 million years later. And this time, it eats."
+  },
+  {
+   "p": 55,
+   "start": 401.17,
+   "end": 410.98,
+   "vo": "A young whale drifts up to breathe in warm, shallow water. The shark comes from below and hits it once, hard, just behind the head. The calf barely struggles."
+  },
+  {
+   "p": 56,
+   "start": 411.97,
+   "end": 413.90999999999997,
+   "vo": "Clean kill. First try."
+  },
+  {
+   "p": 57,
+   "start": 414.98,
+   "end": 422.25,
+   "vo": "This is the Tethys Sea, along a coastline that's now desert in Egypt. And it's full of exactly what great whites are built to eat."
+  },
+  {
+   "p": 58,
+   "start": 423.52,
+   "end": 436.36,
+   "vo": "The calf is Dorudon, a whale that grows to about five meters and comes to these shallows to give birth. Warm-blooded, fat, and it has to surface to breathe. For a great white, it's familiar prey in a bigger package."
+  },
+  {
+   "p": 59,
+   "start": 437.01,
+   "end": 443.71,
+   "vo": "No mosasaurs. No pliosaurs. The giant marine reptiles are gone, and nothing has taken their place yet."
+  },
+  {
+   "p": 60,
+   "start": 444.79,
+   "end": 447.81,
+   "vo": "But the blood draws something long. Very long."
+  },
+  {
+   "p": 61,
+   "start": 448.57,
+   "end": 453.6,
+   "vo": "It slides past the shark without turning, finds a calf of its own, and clamps down on the head."
+  },
+  {
+   "p": 62,
+   "start": 454.58,
+   "end": 466.32,
+   "vo": "Basilosaurus. A whale too, but serpent-shaped and 15 to 18 meters long. One was found with at least two young Dorudon in its stomach, and calf skulls here carry its bite marks."
+  },
+  {
+   "p": 63,
+   "start": 466.93,
+   "end": 468.93,
+   "vo": "It hunts calves, not sharks."
+  },
+  {
+   "p": 64,
+   "start": 469.87,
+   "end": 477.76,
+   "vo": "And that same fossil holds one more detail. Mixed in with its bones were shark teeth. When this giant died, sharks ate it."
+  },
+  {
+   "p": 65,
+   "start": 479.11,
+   "end": 484.73,
+   "vo": "It isn't the biggest predator here. It doesn't need to be. Here, the great white thrives."
+  },
+  {
+   "p": 66,
+   "start": 486.25,
+   "end": 490.11,
+   "vo": "But the whales keep getting bigger. And so does the shark that eats them."
+  },
+  {
+   "p": 67,
+   "start": 492.19,
+   "end": 499.69,
+   "vo": "A new great white drops in, 33 million years later. It's on a dead whale in cool Pacific water, feeding hard."
+  },
+  {
+   "p": 68,
+   "start": 500.32,
+   "end": 504.26,
+   "vo": "Then a shadow passes underneath. It takes a long time to pass."
+  },
+  {
+   "p": 69,
+   "start": 505.28,
+   "end": 510.53,
+   "vo": "The great white leaves the carcass. Instantly. No circling. No second pass."
+  },
+  {
+   "p": 70,
+   "start": 511.47,
+   "end": 516.37,
+   "vo": "Megalodon rises into the blood, and the whole carcass jerks sideways in its jaws."
+  },
+  {
+   "p": 71,
+   "start": 517.4,
+   "end": 527.78,
+   "vo": "One well-studied megalodon skeleton from Belgium works out to about 16 meters long. That's roughly three great whites, nose to tail. Some estimates go higher."
+  },
+  {
+   "p": 72,
+   "start": 529.07,
+   "end": 534.32,
+   "vo": "And this is where the story changes. Because this is the one ocean where we don't have to imagine."
+  },
+  {
+   "p": 73,
+   "start": 535.12,
+   "end": 545.48,
+   "vo": "Great whites really were here. They show up in the Pacific around six million years ago, and by four million years ago they're in oceans worldwide. Right alongside megalodon."
+  },
+  {
+   "p": 74,
+   "start": 546.36,
+   "end": 554.76,
+   "vo": "Chemistry in their teeth shows the two sharks fed at overlapping levels of the food chain. Same seas. Same kinds of prey. Competitors."
+  },
+  {
+   "p": 75,
+   "start": 555.39,
+   "end": 566.82,
+   "vo": "But they weren't built the same. Megalodon needed enormous meals to keep a body that size running. A great white can live on seals, fish, dolphins, or a dead whale it finds by smell."
+  },
+  {
+   "p": 76,
+   "start": 568.06,
+   "end": 571.86,
+   "vo": "As the oceans cooled and prey shifted, that flexibility mattered."
+  },
+  {
+   "p": 77,
+   "start": 572.68,
+   "end": 583.43,
+   "vo": "By about 3.6 million years ago, megalodon was gone. Whether great whites helped push it out is still debated. Cooling seas and changing prey likely played a part too."
+  },
+  {
+   "p": 78,
+   "start": 584.59,
+   "end": 587.26,
+   "vo": "So would a great white survive megalodon's ocean?"
+  },
+  {
+   "p": 79,
+   "start": 588.3,
+   "end": 589.19,
+   "vo": "It already did."
+  },
+  {
+   "p": 80,
+   "start": 590.23,
+   "end": 591.94,
+   "vo": "It never had to beat megalodon."
+  },
+  {
+   "p": 81,
+   "start": 592.71,
+   "end": 594.19,
+   "vo": "It just had to outlast it."
+  },
+  {
+   "p": 82,
+   "start": 596.21,
+   "end": 598.27,
+   "vo": "So what do you think \u2014 did we get it right?"
+  },
+  {
+   "p": 83,
+   "start": 599.1,
+   "end": 607.6,
+   "vo": "Because if these oceans prove anything, it's that survival was never just about being the biggest thing in the water. It was about adapting when the water changed."
+  }
+ ]
+}

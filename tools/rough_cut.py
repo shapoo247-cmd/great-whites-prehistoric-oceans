@@ -9,13 +9,22 @@ VO = R + '/source/VO_Great_White.mp3'; FONT = '/usr/share/fonts/opentype/inter/I
 def probe(f): return float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', f]))
 def mmss(x): return f'{int(x // 60)}:{x % 60:05.2f}'
 VO_END = 608.1
+import argparse
+ap = argparse.ArgumentParser(); ap.add_argument('--md-only', action='store_true'); ap.add_argument('--broll', help='folder with your footage named p<N>.mp4 (N = VO paragraph id, see ASSEMBLY_GUIDE.md)'); ap.add_argument('--music', help='optional music file mixed under the voice'); ap.add_argument('--no-scenes', action='store_true', help='leave out the animated story scenes'); ap.add_argument('--out', default=RN + '/ROUGH_CUT.mp4')
+ARGS = ap.parse_args()
+LAYER = {'scene': 0, 'full': 1, 'title': 2, 'tier': 2, 'overlay': 3}
+items = list(M.ITEMS) + ([] if ARGS.no_scenes else list(M.SCENES))
+have_scenes = not ARGS.no_scenes
 clips = []
-for cid, scene, start, kind, what in M.ITEMS:
-    if cid in ('S04',) and False: continue
+for cid, scene, start, kind, what in items:
+    if have_scenes and cid in M.SKIP_WHEN_SCENES: continue
     rel = M.resolve(scene); f = f'{RN}/{rel}'
-    if not os.path.exists(f): print('MISSING', cid, rel); continue
-    clips.append(dict(id=cid, file=f, rel=rel, start=start, dur=probe(f), kind=kind, what=what))
-clips.sort(key=lambda c: c['start'])
+    if not os.path.exists(f) and not (ARGS.md_only and kind == 'scene'): print('MISSING', cid, rel); continue
+    try: dur = probe(f)
+    except Exception: dur = M.SCENE_DUR.get(cid, 5.0)
+    clips.append(dict(id=cid, file=f, rel=rel, start=start, dur=dur, kind=kind, what=what))
+clips.sort(key=lambda c: (LAYER[c['kind']], c['start']))   # draw order: scenes < full-frame < titles/tier < overlays
+PLACED = sorted(clips, key=lambda c: c['start'])
 # paragraphs for the footage-slot labels
 paras = {}
 for line in open(R + '/timing/vo_sentences.txt'):
@@ -23,6 +32,7 @@ for line in open(R + '/timing/vo_sentences.txt'):
     if not m: continue
     a = int(m[1]) * 60 + float(m[2]); b = int(m[3]) * 60 + float(m[4]); p = int(m[5]); paras.setdefault(p, [a, b, []]); paras[p][0] = min(paras[p][0], a); paras[p][1] = max(paras[p][1], b); paras[p][2].append(m[6])
 PARAS = [(v[0], v[1], ' '.join(v[2])) for k, v in sorted(paras.items())]
+PARA_IDS = [k for k, v in sorted(paras.items())]
 def vo_line(t):
     best = ''
     for line in open(R + '/timing/vo_sentences.txt'):
@@ -48,6 +58,15 @@ def segment(i, a, b):
         fc[-1] += f",drawtext=fontfile={FONTR}:textfile={tf}:fontsize=34:line_spacing=10:fontcolor=white@0.9:x=(w-text_w)/2:y=h/2-40:enable='between(t,{sa:.3f},{sb:.3f})'"
     fc[-1] += '[base]'
     last = 'base'; aud = ['[1:a]volume=1.0[vo]']; mix = ['[vo]']; n = 2
+    if ARGS.broll:
+        for k, (pa, pb, txt) in enumerate(PARAS):
+            f = os.path.join(ARGS.broll, f'p{PARA_IDS[k]}.mp4')
+            if not os.path.exists(f) or pb < a or pa > b: continue
+            off = max(a - pa, 0); st = max(pa - a, 0); vis = min(pb, b) - max(pa, a)
+            inp += ['-stream_loop', '-1', '-ss', f'{off:.3f}', '-t', f'{vis:.3f}', '-i', f]; v = n; n += 1
+            fc.append(f"[{v}:v]fps=30,scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,setpts=PTS-STARTPTS+{st:.3f}/TB[b{v}]"); fc.append(f"[{last}][b{v}]overlay=0:0:eof_action=pass:enable='between(t,{st:.3f},{st + vis:.3f})'[ob{v}]"); last = f'ob{v}'
+    if ARGS.music:
+        inp += ['-ss', f'{a}', '-t', f'{d:.3f}', '-i', ARGS.music]; mk = n; n += 1; aud.append(f"[{mk}:a]volume=0.22[mus]"); mix.append('[mus]')
     for c in clips:
         e = c['start'] + c['dur']
         if e <= a or c['start'] >= b: continue
@@ -69,23 +88,23 @@ def placement_md():
          '- **full** / **title** / **tier** = full-frame `.mp4`. It replaces the B-roll for its duration.',
          '- Each clip has its own sound effects inside and as `<name>_SFX.wav` (sea ambience is mixed under them).', '',
          '| # | ID | File | Type | Start | End | Length | What it shows | VO at that moment |', '|---|---|---|---|---|---|---|---|---|']
-    for i, c in enumerate(clips, 1):
+    for i, c in enumerate(PLACED, 1):
         L.append(f"| {i} | {c['id']} | `renders/{c['rel']}` | {c['kind']} | {mmss(c['start'])} | {mmss(c['start'] + c['dur'])} | {c['dur']:.1f}s | {c['what']} | {vo_line(c['start'])} |")
     L += ['', '## Not placed in the rough cut (files still delivered)', '']
     for cid, scene, what in M.EXTRA:
         try: L.append(f"- **{cid}** `renders/{M.resolve(scene)}` — {what}")
         except Exception: pass
     L += ['', '## Music shift points (music is yours)', '', '| Time | Shift |', '|---|---|', '| 0:00.00 | Cold open: tense, low |', '| 0:29.20 | Premise board: build, "six oceans" |']
-    for c in clips:
+    for c in PLACED:
         if c['kind'] == 'title': L.append(f"| {mmss(c['start'])} | New ocean ({c['what'].split('(')[0].replace('Title card: ', '').strip()}): change the music feel here |")
     L += ['| 8:49.07 | "This is where the story changes": calmer, thoughtful |', '| 9:54.30 | Final board / ending: resolve |', '',
           '## Visual reset', '', 'Every ocean starts with a full-frame title card, every verdict is a full-frame tier clip, and size checks / maps are full-frame, so the picture resets about every 20–40 s.', '']
     open(R + '/PLACEMENT.md', 'w').write('\n'.join(L)); print('PLACEMENT.md written', len(clips), 'clips')
 if __name__ == '__main__':
-    placement_md()
-    if '--md-only' in sys.argv: sys.exit()
+    placement_md(); import json; json.dump({'clips': [{k: c[k] for k in ('id', 'rel', 'start', 'dur', 'kind', 'what')} for c in PLACED], 'paragraph_slots': [{'p': PARA_IDS[i], 'start': a, 'end': b, 'vo': t} for i, (a, b, t) in enumerate(PARAS)]}, open(R + '/placement.json', 'w'), indent=1)
+    if ARGS.md_only: sys.exit()
     segs = []; a = 0; i = 0
     while a < VO_END:
         b = min(a + 60, VO_END); print('segment', i, a, b, flush=True); segs.append(segment(i, a, b)); a = b; i += 1
     open(f'{TMP}/list.txt', 'w').write(''.join(f"file '{s}'\n" for s in segs))
-    subprocess.check_call(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', f'{TMP}/list.txt', '-c', 'copy', '-movflags', '+faststart', RN + '/ROUGH_CUT.mp4']); print('ROUGH_CUT', probe(RN + '/ROUGH_CUT.mp4'))
+    subprocess.check_call(['ffmpeg', '-y', '-v', 'error', '-f', 'concat', '-safe', '0', '-i', f'{TMP}/list.txt', '-c', 'copy', '-movflags', '+faststart', ARGS.out]); print('DONE', ARGS.out, probe(ARGS.out))
