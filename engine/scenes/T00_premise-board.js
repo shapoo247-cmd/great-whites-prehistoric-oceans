@@ -8,7 +8,7 @@ import { P, inv, ease, lerp, makeCanvas } from '../lib/core.js';
 let board, water, full, tile;
 const ids = OCEANS.map(o => o.id);
 export default {
-  duration: 11.3, ambience: false, out: '01_tier-board/T00_premise-board',
+  duration: 11.3, ambience: false, bloom: false, out: '01_tier-board/T00_premise-board',
   sfx: [
     ...ids.map((_, i) => ({ name: 'ui_tick', t: 0.35 + i * 0.2, gain: -6 })),
     { name: 'ui_drop', t: 2.98, gain: -4 }, { name: 'data_blip', t: 3.0, gain: -10 },

@@ -9,9 +9,9 @@ sc.draw = (ctx, t) => {
   ctx.save(); ctx.globalAlpha = fadeEdges(t, D, 0.5, 0.7);
   veil(ctx, 1000, 280, 900, 560, 0.34);
   const kb = P(t, 0.1, 0.8, ease.outCubic);
-  for (let i = 0; i < 6; i++) vertebra(ctx, 1160 + i * 120, 600 + Math.sin(i * 0.6) * 24, 52, Math.sin(i * 0.6 - 0.4) * 0.3, kb);
-  const kt = P(t, tT, tT + 0.5, ease.outBack), x = 1160 + 3 * 120, y = 600 + Math.sin(1.8) * 24;
-  tooth(ctx, x + 6, y - 18, 78 * kt, -0.3, 1, P(t, tB - 0.3, tB + 0.4) * (0.7 + 0.3 * Math.sin(t * 6)));
+  for (let i = 0; i < 6; i++) vertebra(ctx, 1010 + i * 160, 600 + Math.sin(i * 0.6) * 30, 78, Math.sin(i * 0.6 - 0.4) * 0.3, kb);
+  const kt = P(t, tT, tT + 0.5, ease.outBack), x = 1010 + 3 * 160, y = 600 + Math.sin(1.8) * 24;
+  tooth(ctx, x + 8, y - 26, 118 * kt, -0.3, 1, P(t, tB - 0.3, tB + 0.4) * (0.7 + 0.3 * Math.sin(t * 6)));
       ctx.restore();
 };
 export default sc;

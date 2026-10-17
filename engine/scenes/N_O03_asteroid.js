@@ -1,7 +1,7 @@
 // O03 · VO 6:23.6  "Then the asteroid hits. The mosasaurs vanish."
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-import { drawCreature } from '../lib/creatures.js';
+import { lit } from '../lib/doc.js';
 const T0 = 383.4, D = 4.6; const sc = { duration: D, out: '06_doc-style/overlays/O03_asteroid-impact', alpha: true, qscale: 20 };
 let R, tHit, tVan;
 sc.setup = async () => { await loadVO(); R = rel(T0); tHit = R.s('asteroid hits', 383) + 0.25; tVan = R.s('mosasaurs vanish', 383);
@@ -20,7 +20,7 @@ sc.draw = (ctx, t) => {
     for (let i = 0; i < 3; i++) { const aa = a - i * 0.18; if (aa < 0) continue; ctx.strokeStyle = `rgba(255,220,170,${0.7 * Math.exp(-aa * 1.6)})`; ctx.lineWidth = 4; ctx.beginPath(); ctx.ellipse(x1, y1, aa * 900, aa * 330, 0, 0, 7); ctx.stroke(); } }
   // mosasaurs vanish
   const v = P(t, tVan, tVan + 1.0, slow);
-  if (t > tHit) { ctx.globalAlpha = (1 - v) * P(t, tHit + 0.1, tHit + 0.5); drawCreature(ctx, 'tylosaurus', { x: 600, y: 860, len: 700, color: 'rgba(255,255,255,0.35)', flip: true, phase: t * 2 }); }
+  if (t > tHit) { ctx.globalAlpha = (1 - v) * P(t, tHit + 0.1, tHit + 0.5); lit(ctx, 'tylosaurus', { pal: 'grey', x: 600, y: 860, len: 700, flip: true, phase: t * 2, fog: ['#0b1a1c', 0.15 + 0.6 * v] }); }
       ctx.restore();
 };
 export default sc;

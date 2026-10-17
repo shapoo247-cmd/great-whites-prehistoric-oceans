@@ -2,6 +2,7 @@
 // Explains: hidden prey in murk -> its heartbeat sends an electric field -> shark snout picks it up.
 import { cap, hair, P, ease, fadeEdges, slow, lerp } from '../lib/doc.js';
 import { creaturePath, drawCreature } from '../lib/creatures.js';
+import { lit } from '../lib/doc.js';
 const T0 = 78.6, at = s => s - T0, D = 5.6, BEAT = 0.95;
 const GL = 900, GX = 640, GY = 520;                  // shark length / centre
 const HX = 1470, HY = 640;                           // prey heart
@@ -26,7 +27,7 @@ export default {
     const snout = map(0.985, 0.012), nose = map(0.95, -0.012);
     // prey fish, nearly lost in murk, appears faintly
     const pk = P(t, at(79.6), at(80.6), slow);
-    fish(ctx, HX, HY, 210, 0.55 * pk, t * 5);
+    ctx.save(); ctx.globalAlpha *= 0.8 * pk; lit(ctx, 'fish', { pal: 'dark', x: HX, y: HY, len: 230, phase: t * 5, flip: true, fog: ['#142022', 0.35] }); ctx.restore();
     // heartbeat pulse
     const on = at(80.41), ph = ((t - on) % BEAT + BEAT) % BEAT, pulse = t > on ? Math.exp(-ph * 5.5) : 0;
     const hk = P(t, at(80.3), at(80.9), slow);

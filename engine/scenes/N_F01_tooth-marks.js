@@ -12,9 +12,9 @@ sc.draw = (ctx, t) => {
   veil(ctx, 1040, 160, 880, 780, 0.34);
     tc.forEach((tt, i) => {
     const y = 420 + i * 190, kb = P(t, tt - 0.5, tt + 0.2, ease.outCubic);
-    bone(ctx, 1480, y, 520, -0.04 + i * 0.05, kb);
-    for (let j = 0; j < 5; j++) puncture(ctx, 1370 + j * 52 + (j % 2) * 4, y - 8 + (j % 2) * 20 + i * 3, 9, P(t, tt + 0.15 + j * 0.08, tt + 0.4 + j * 0.08));
-    cap(ctx, names[i], 1480, y + 72, { align: 'center', font: '500 20px Inter', ls: 10, a: P(t, tt - 0.1, tt + 0.5, slow) });
+    bone(ctx, 1450, y, 780, -0.04 + i * 0.05, kb);
+    for (let j = 0; j < 5; j++) puncture(ctx, 1180 + j * 86 + (j % 2) * 6, y - 8 + (j % 2) * 24 + i * 3, 11, P(t, tt + 0.15 + j * 0.08, tt + 0.4 + j * 0.08));
+    cap(ctx, names[i], 1450, y + 78, { align: 'center', font: '500 20px Inter', ls: 10, a: P(t, tt - 0.1, tt + 0.5, slow) });
   });
   ctx.restore();
 };

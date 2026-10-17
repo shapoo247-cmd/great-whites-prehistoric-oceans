@@ -1,11 +1,17 @@
+import { lit } from './doc.js';
 // Simple vector props for evidence / diet graphics (flat, clean silhouettes + a few shaded bits).
 export function bone(ctx, x, y, len, ang = 0, a = 1) {
-  ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.globalAlpha *= a; ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 14;
-  const g = ctx.createLinearGradient(0, -34, 0, 34); g.addColorStop(0, '#f3ecd8'); g.addColorStop(1, '#a9a086'); ctx.fillStyle = g;
-  const h = len / 2, w = 17, k = 21;
-  ctx.beginPath(); ctx.roundRect(-h + k, -w, len - 2 * k, 2 * w, w); ctx.fill();
-  for (const sx of [-1, 1]) for (const sy of [-1, 1]) { ctx.beginPath(); ctx.arc(sx * (h - k * 0.55), sy * (k * 0.62), k * 0.78, 0, 7); ctx.fill(); }
-  ctx.restore();
+  ctx.save(); ctx.translate(x, y); ctx.rotate(ang); ctx.globalAlpha *= a;
+  const h = len / 2, w = 17, k = 22;
+  const path = new Path2D(); path.roundRect(-h + k, -w, len - 2 * k, 2 * w, w);
+  for (const sx of [-1, 1]) for (const sy of [-1, 1]) path.arc(sx * (h - k * 0.55) + k * 0.78, sy * (k * 0.62), k * 0.78, 0, Math.PI * 2);
+  ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 16; ctx.shadowOffsetY = 6;
+  const g = ctx.createLinearGradient(0, -k, 0, k); g.addColorStop(0, '#e9e0c6'); g.addColorStop(0.45, '#bdb394'); g.addColorStop(1, '#6f664f'); ctx.fillStyle = g; ctx.fill(path);
+  ctx.shadowColor = 'transparent'; ctx.save(); ctx.clip(path);
+  for (let i = 0; i < 90; i++) { const px = -h + ((i * 53) % 100) / 100 * len, py = -k + ((i * 37) % 100) / 100 * k * 2; ctx.fillStyle = i % 3 ? 'rgba(60,48,30,0.18)' : 'rgba(255,250,230,0.16)'; ctx.beginPath(); ctx.arc(px, py, 1 + (i % 4) * 0.6, 0, 7); ctx.fill(); }
+  const hl = ctx.createLinearGradient(0, -w, 0, w * 0.2); hl.addColorStop(0, 'rgba(255,255,240,0.45)'); hl.addColorStop(1, 'rgba(255,255,240,0)'); ctx.fillStyle = hl; ctx.fillRect(-h, -w, len, w * 1.2);
+  const sd = ctx.createLinearGradient(0, 0, 0, w); sd.addColorStop(0, 'rgba(0,0,0,0)'); sd.addColorStop(1, 'rgba(20,14,6,0.45)'); ctx.fillStyle = sd; ctx.fillRect(-h, 0, len, w * 1.4);
+  ctx.restore(); ctx.restore();
 }
 // a bite puncture: dark pit with a lit rim; k = 0..1 press-in animation
 export function puncture(ctx, x, y, r, k) {
@@ -26,10 +32,9 @@ export function vertebra(ctx, x, y, s, ang = 0, a = 1) {
   ctx.strokeStyle = 'rgba(70,60,40,0.35)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(-s * 0.55, -s * 0.2); ctx.lineTo(s * 0.55, -s * 0.2); ctx.moveTo(-s * 0.55, s * 0.3); ctx.lineTo(s * 0.55, s * 0.3); ctx.stroke(); ctx.restore();
 }
 export function skull(ctx, x, y, s, a = 1) {
-  ctx.save(); ctx.translate(x, y); ctx.globalAlpha *= a; ctx.shadowColor = 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 12;
-  const g = ctx.createLinearGradient(0, -s, 0, s); g.addColorStop(0, '#f1ead6'); g.addColorStop(1, '#aca388'); ctx.fillStyle = g;
-  ctx.beginPath(); ctx.moveTo(-s, -s * 0.2); ctx.quadraticCurveTo(-s * 0.6, -s * 0.9, -s * 0.05, -s * 0.7); ctx.lineTo(s * 1.3, -s * 0.12); ctx.lineTo(s * 1.3, s * 0.12); ctx.lineTo(s * 0.1, s * 0.35); ctx.quadraticCurveTo(-s * 0.7, s * 0.6, -s, -s * 0.2); ctx.closePath(); ctx.fill();
-  ctx.fillStyle = '#2b2418'; ctx.beginPath(); ctx.arc(-s * 0.05, -s * 0.18, s * 0.17, 0, 7); ctx.fill(); ctx.restore();
+  // a real skull: the head of the shaded Dorudon model, cropped, in bone colours
+  ctx.save(); ctx.globalAlpha *= a; const L = s * 5.2; ctx.beginPath(); ctx.rect(x - 0.13 * L, y - 0.14 * L, 0.27 * L, 0.28 * L); ctx.clip();
+  lit(ctx, 'dorudon', { pal: 'bone', x: x - 0.39 * L, y, len: L, phase: 0, amp: 0, fog: ['#0b1a1c', 0.0] }); ctx.restore();
 }
 export function plesiosaur(ctx, x, y, s, color, a = 1, dash = false) {
   ctx.save(); ctx.translate(x, y); ctx.globalAlpha *= a; ctx.fillStyle = color; ctx.strokeStyle = color; ctx.lineWidth = 2.5; if (dash) ctx.setLineDash([8, 6]);

@@ -39,3 +39,16 @@ export function big(ctx, s, x, y, o = {}) {
   ctx.shadowColor = 'rgba(0,0,0,0.6)'; ctx.shadowBlur = 26; ctx.fillStyle = o.color || '#fff'; ctx.fillText(s, x, y); ctx.restore();
 }
 export const COL = { hot: '#ff7a5c', warm: '#ffb06a', cold: '#8fd8ff', gw: '#7fe3ff', bad: '#ff6a5c', ok: '#9fffbb', gold: '#ffd36a' };
+
+// lit, shaded animals tinted to a role colour (no flat clip-art silhouettes)
+import { drawCreature as _dc } from './creatures.js';
+export const PAL = {
+  gw:    { colors: { back: '#142a38', flank: '#2f6f8a', belly: '#b6e8f6' }, rim: 'rgba(160,235,255,0.85)' },
+  prey:  { colors: { back: '#4a3512', flank: '#a9822f', belly: '#f1d98f' }, rim: 'rgba(255,225,150,0.85)' },
+  rival: { colors: { back: '#3d200c', flank: '#b86a22', belly: '#f2c58f' }, rim: 'rgba(255,190,120,0.85)' },
+  threat:{ colors: { back: '#1c1214', flank: '#5a2a2c', belly: '#a9877f' }, rim: 'rgba(255,140,120,0.7)' },
+  bone:  { colors: { back: '#7c7766', flank: '#c9c2aa', belly: '#f1ecda' }, rim: 'rgba(255,255,240,0.7)' },
+  dark:  { colors: { back: '#05090c', flank: '#0d171d', belly: '#1c2a33' }, rim: 'rgba(120,170,190,0.4)' },
+  grey:  { colors: { back: '#1c2731', flank: '#3a4a57', belly: '#8d9aa3' }, rim: 'rgba(200,230,240,0.55)' },
+};
+export function lit(ctx, name, o) { const p = PAL[o.pal || 'grey']; return _dc(ctx, name, { style: 'shaded', colors: p.colors, rim: p.rim, fog: o.fog || ['#0b1a1c', o.fogA ?? 0.08], ...o }); }
