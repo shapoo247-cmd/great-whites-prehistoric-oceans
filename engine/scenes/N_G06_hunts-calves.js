@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 466.8, D = 3.4; const sc = { duration: D, out: '06_doc-style/overlays/G06_hunts-calves-not-sharks', alpha: true, qscale: 20 };
+const T0 = 466.8, D = 3.4; const sc = { duration: D, out: 'overlays/G06_hunts-calves-not-sharks', alpha: true, qscale: 20 };
 let R, tCalf, tShark;
 sc.setup = async () => { await loadVO(); R = rel(T0); tCalf = R.s('calves', 466); tShark = R.s('not sharks', 466); sc.sfx = [{ name: 'data_blip', t: tCalf, gain: -10 }, { name: 'impact_dark', t: tShark, gain: -10 }]; };
 sc.draw = (ctx, t) => {

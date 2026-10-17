@@ -5,7 +5,7 @@ import { geoConicConformal } from '../lib/maps.js';
 import { mapBase, sea } from '../lib/docMap.js';
 import { pin } from '../lib/maps.js';
 import { Water } from '../lib/water.js';
-const T0 = 337.4, D = 12.7; const sc = { duration: D, out: '06_doc-style/full-frame/E10_western-interior-seaway-map' };
+const T0 = 337.4, D = 12.7; const sc = { duration: D, out: 'full-frame/E10_western-interior-seaway-map' };
 let R, base, proj, tSea, tCreto, tKansas, W;
 const SEA = [[-100, 28], [-103, 31], [-107, 34], [-110, 38], [-112, 42], [-114, 47], [-117, 52], [-121, 58], [-126, 64], [-131, 69], [-118, 71], [-104, 69], [-96, 62], [-96, 55], [-95, 49], [-95, 43], [-93, 37], [-92, 31], [-95, 27]];
 sc.setup = async () => { await loadVO(); R = rel(T0); tSea = R.s('this warm shallow', 337); tCreto = R.s('cretoxyrhina', 337); tKansas = R.s('kansas', 337);

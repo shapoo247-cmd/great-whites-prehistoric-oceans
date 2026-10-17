@@ -1,7 +1,7 @@
 // E06 · VO 2:15.4  "...fossil teeth record tropical surface water near 40°C — 104°F. That's far hotter than any sea it has ever swum."
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-const T0 = 135.3, D = 9.7; const sc = { duration: D, out: '06_doc-style/overlays/E06_heat-40C-104F', alpha: true, qscale: 20 };
+const T0 = 135.3, D = 9.7; const sc = { duration: D, out: 'overlays/E06_heat-40C-104F', alpha: true, qscale: 20 };
 let R, t40, tF, tFar, tTeeth;
 sc.setup = async () => { await loadVO(); R = rel(T0); tTeeth = R.s('fossil teeth', 135); t40 = R.s('forty', 135); tF = R.s('fahrenheit', 135); tFar = R.s('far hotter', 140);
   sc.sfx = [{ name: 'riser', t: t40 - 1.2, gain: -14 }, { name: 'data_blip', t: t40, gain: -9 }, { name: 'data_blip', t: R.s('one hundred', 135), gain: -11 }, { name: 'alarm_low', t: tFar, gain: -14 }]; };

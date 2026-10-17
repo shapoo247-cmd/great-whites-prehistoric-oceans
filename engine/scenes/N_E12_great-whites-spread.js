@@ -6,7 +6,7 @@ import { pin, geoNaturalEarth1 } from '../lib/maps.js';
 import { geoContains } from 'd3-geo';
 import { mulberry } from '../lib/core.js';
 import { Water } from '../lib/water.js';
-const T0 = 537.1, D = 9.2; const sc = { duration: D, out: '06_doc-style/full-frame/E12_great-whites-spread-worldwide-map' };
+const T0 = 537.1, D = 9.2; const sc = { duration: D, out: 'full-frame/E12_great-whites-spread-worldwide-map' };
 let R, base, proj, atlas, tPac, tSix, tFour, tAlong, W, dots = [];
 const ORIGIN = [-122, 33];
 sc.setup = async () => { await loadVO(); R = rel(T0); tPac = R.s('pacific', 537); tSix = R.s('six million', 537); tFour = R.s('four million', 537); tAlong = R.s('alongside megalodon', 537);

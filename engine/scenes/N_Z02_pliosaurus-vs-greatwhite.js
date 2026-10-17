@@ -1,7 +1,7 @@
 // Z02 · VO 4:17.5  Pliosaurus up to 12 m, skull ~2 m from snout to back, longer than a man is tall.
 import { loadVO, rel } from '../lib/vo.js';
 import { stage, cap, hair, big, measure, P, ease, lerp, clamp, slow, COL, drawCreature, humanPath } from '../lib/sizecomp2.js';
-const T0 = 257.5, D = 7.8; const sc = { duration: D, out: '06_doc-style/size-comparisons/Z02_pliosaurus-vs-greatwhite' };
+const T0 = 257.5, D = 7.8; const sc = { duration: D, out: 'size-comparisons/Z02_pliosaurus-vs-greatwhite' };
 let S, R, t12, tSkull, tMan; const ppm = 115, X0 = 170;
 sc.setup = async () => { await loadVO(); R = rel(T0); S = stage('jurassic', 22); t12 = R.s('twelve', 257); tSkull = R.s('skull', 257); tMan = R.s('longer than', 258);
   sc.sfx = [{ name: 'impact_deep', t: 0.15, gain: -7 }, { name: 'data_blip', t: t12, gain: -9 }, { name: 'whoosh_fast', t: tSkull, gain: -11 }, { name: 'ui_drop', t: tMan, gain: -8 }]; };

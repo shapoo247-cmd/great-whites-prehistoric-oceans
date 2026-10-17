@@ -3,7 +3,7 @@ import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { drawCreature } from '../lib/creatures.js';
 import { lit } from '../lib/doc.js';
-const T0 = 429.6, D = 7.2; const sc = { duration: D, out: '06_doc-style/overlays/G04_dorudon-warm-surfaces', alpha: true, qscale: 20 };
+const T0 = 429.6, D = 7.2; const sc = { duration: D, out: 'overlays/G04_dorudon-warm-surfaces', alpha: true, qscale: 20 };
 let R, tWarm, tSurf, tFam;
 sc.setup = async () => { await loadVO(); R = rel(T0); tWarm = R.s('warm blooded', 429); tSurf = R.s('surface to breathe', 429); tFam = R.s('familiar prey', 429); sc.sfx = [{ name: 'data_blip', t: tWarm, gain: -11 }, { name: 'whoosh_slow', t: tSurf, gain: -13 }, { name: 'data_blip', t: tFam, gain: -10 }]; };
 sc.draw = (ctx, t) => {

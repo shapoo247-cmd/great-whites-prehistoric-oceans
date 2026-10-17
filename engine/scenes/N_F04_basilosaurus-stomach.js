@@ -4,7 +4,7 @@ import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../li
 import { drawCreature, creaturePath } from '../lib/creatures.js';
 import { skull, puncture } from '../lib/props.js';
 import { lit } from '../lib/doc.js';
-const T0 = 460.7, D = 6.3; const sc = { duration: D, out: '06_doc-style/overlays/F04_basilosaurus-stomach-and-bite-marks', alpha: true, qscale: 20 };
+const T0 = 460.7, D = 6.3; const sc = { duration: D, out: 'overlays/F04_basilosaurus-stomach-and-bite-marks', alpha: true, qscale: 20 };
 let R, tTwo, tSk;
 sc.setup = async () => { await loadVO(); R = rel(T0); tTwo = R.s('two young', 460); tSk = R.s('calf skulls', 460); sc.sfx = [{ name: 'data_blip', t: tTwo, gain: -11 }, { name: 'data_blip', t: tTwo + 0.4, gain: -12 }, { name: 'impact_hit', t: tSk + 0.5, gain: -16 }]; };
 sc.draw = (ctx, t) => {

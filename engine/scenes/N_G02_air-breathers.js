@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 232.9, D = 8.6; const sc = { duration: D, out: '06_doc-style/overlays/G02_air-breathers-must-surface', alpha: true, qscale: 20 };
+const T0 = 232.9, D = 8.6; const sc = { duration: D, out: 'overlays/G02_air-breathers-must-surface', alpha: true, qscale: 20 };
 let R, tAir, tUp, tWait;
 sc.setup = async () => { await loadVO(); R = rel(T0); tAir = R.s('breathe air', 232); tUp = R.s('has to come up', 232); tWait = R.s('waiting in the dark', 232); sc.sfx = [{ name: 'data_blip', t: tAir, gain: -11 }, { name: 'whoosh_slow', t: tUp, gain: -13 }, { name: 'impact_dark', t: tWait + 0.5, gain: -11 }]; };
 sc.draw = (ctx, t) => {

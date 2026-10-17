@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 249.8, D = 5.6; const sc = { duration: D, out: '06_doc-style/overlays/G08_jaws-close-great-white-lets-go', alpha: true, qscale: 20 };
+const T0 = 249.8, D = 5.6; const sc = { duration: D, out: 'overlays/G08_jaws-close-great-white-lets-go', alpha: true, qscale: 20 };
 let R, tJaws, tLet;
 sc.setup = async () => { await loadVO(); R = rel(T0); tJaws = R.s('jaws close', 249); tLet = R.s('lets go', 249); sc.sfx = [{ name: 'impact_deep', t: tJaws + 0.15, gain: -4 }, { name: 'impact_hit', t: tJaws + 0.2, gain: -8 }, { name: 'whoosh_water', t: tLet, gain: -11 }]; };
 sc.draw = (ctx, t) => {

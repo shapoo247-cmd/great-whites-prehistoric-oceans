@@ -1,2 +1,4 @@
 renders/05_environment/E04_oxygen-hud.mov filter=lfs diff=lfs merge=lfs -text
 renders/06_doc-style/E04_swim-to-breathe.mov filter=lfs diff=lfs merge=lfs -text
+renders/**/*.mov filter=lfs diff=lfs merge=lfs -text
+renders/ROUGH_CUT.mp4 filter=lfs diff=lfs merge=lfs -text

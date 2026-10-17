@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { mulberry } from '../lib/core.js';
-const T0 = 18.0, D = 7.4; const sc = { duration: D, out: '06_doc-style/overlays/E01_jaw-speed', alpha: true, qscale: 20 };
+const T0 = 18.0, D = 7.4; const sc = { duration: D, out: 'overlays/E01_jaw-speed', alpha: true, qscale: 20 };
 let R, tSnap, tFifth, tSuck; const rnd = mulberry(3), parts = Array.from({ length: 46 }, () => ({ a: rnd() * 6.28, r: 0.3 + rnd() * 0.7, o: rnd() }));
 sc.setup = async () => { await loadVO(); R = rel(T0); tSnap = R.s('snap open'); tFifth = R.s('fiftieth'); tSuck = R.s('suck prey');
   sc.sfx = [{ name: 'impact_hit', t: tSnap, gain: -10 }, { name: 'whoosh_fast', t: tSnap - 0.05, gain: -10 }, { name: 'whoosh_water', t: tSuck, gain: -12 }]; };

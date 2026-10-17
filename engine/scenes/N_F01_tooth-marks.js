@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, fadeEdges, slow } from '../lib/doc.js';
 import { bone, puncture } from '../lib/props.js';
-const T0 = 264.1, D = 7.6; const sc = { duration: D, out: '06_doc-style/overlays/F01_pliosaurus-tooth-marks', alpha: true, qscale: 20 };
+const T0 = 264.1, D = 7.6; const sc = { duration: D, out: 'overlays/F01_pliosaurus-tooth-marks', alpha: true, qscale: 20 };
 let R, tc;
 sc.setup = async () => { await loadVO(); R = rel(T0); tc = [R.s('ichthyosaurs', 264), R.s('plesiosaurs', 264), R.s('other pliosaurs', 264)];
   sc.sfx = [{ name: 'data_blip', t: 0.2, gain: -12 }, ...tc.flatMap((x, i) => [0, 0.25, 0.5].map(d => ({ name: 'impact_hit', t: x + 0.15 + d, gain: -22 + i }))) ]; };

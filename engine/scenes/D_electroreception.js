@@ -14,7 +14,7 @@ function fish(ctx, x, y, L, a, phase) {
   ctx.restore();
 }
 export default {
-  duration: D, out: '06_doc-style/overlays/E02_electroreception', alpha: true, qscale: 20,
+  duration: D, out: 'overlays/E02_electroreception', alpha: true, qscale: 20,
   sfx: [{ name: 'sonar_ping', t: at(79.4), gain: -14 }, { name: 'heartbeat', t: at(80.9), gain: -8 }, { name: 'data_blip', t: at(81.5), gain: -14 }],
   draw(ctx, t) {
     const f = fadeEdges(t, D, 0.7, 0.8);

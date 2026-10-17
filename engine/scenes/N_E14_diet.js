@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 555.3, D = 12.6; const sc = { duration: D, out: '06_doc-style/overlays/E14_diet-megalodon-vs-great-white', alpha: true, qscale: 20 };
+const T0 = 555.3, D = 12.6; const sc = { duration: D, out: 'overlays/E14_diet-megalodon-vs-great-white', alpha: true, qscale: 20 };
 let R, tBut, tMeg, tGw, tSeal, tFish, tDol, tWhale;
 sc.setup = async () => { await loadVO(); R = rel(T0); tBut = R.s('built the same', 555); tMeg = R.s('enormous meals', 555); tGw = R.s('a great white can', 555); tSeal = R.s('seals', 561); tFish = R.s('fish', 562); tDol = R.s('dolphins', 563); tWhale = R.s('dead whale', 564);
   sc.sfx = [{ name: 'impact_deep', t: tMeg, gain: -12 }, { name: 'data_blip', t: tSeal, gain: -12 }, { name: 'data_blip', t: tFish, gain: -12 }, { name: 'data_blip', t: tDol, gain: -12 }, { name: 'sonar_ping', t: tWhale, gain: -12 }]; };

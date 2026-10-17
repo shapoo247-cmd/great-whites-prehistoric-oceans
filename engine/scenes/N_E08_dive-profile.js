@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { drawCreature } from '../lib/creatures.js';
-const T0 = 154.3, D = 22.3; const sc = { duration: D, out: '06_doc-style/overlays/E08_dive-profile-dead-layer', alpha: true, qscale: 20 };
+const T0 = 154.3, D = 22.3; const sc = { duration: D, out: 'overlays/E08_dive-profile-dead-layer', alpha: true, qscale: 20 };
 let R, tDive, tDeeper, tStill, tCool, tWorse, tDead, tBack, tHeat;
 sc.setup = async () => { await loadVO(); R = rel(T0); tDive = R.s('so it dives', 154); tDeeper = R.s('deeper', 157); tStill = R.s('deeper still', 158); tCool = R.s('doesn\'t get cooler', 160); tWorse = R.s('it gets worse', 161); tDead = R.s('dead layer', 163); tBack = R.s('turns hard back', 166); tHeat = R.s('heat reaches', 170);
   sc.sfx = [{ name: 'whoosh_slow', t: tDive, gain: -14 }, { name: 'data_blip', t: tDeeper, gain: -12 }, { name: 'data_blip', t: tStill, gain: -12 }, { name: 'alarm_low', t: tWorse, gain: -13 }, { name: 'impact_dark', t: tDead, gain: -9 }, { name: 'whoosh_fast', t: tBack, gain: -12 }, { name: 'rumble_bed', t: tHeat, gain: -14 }]; };

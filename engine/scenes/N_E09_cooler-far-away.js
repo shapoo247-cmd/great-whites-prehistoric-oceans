@@ -1,7 +1,7 @@
 // E09 · VO 3:03.7  "Cooler water exists far to the north and south. But it's a long swim through empty sea, and a warm-bodied shark... burns through its reserves fast."
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-const T0 = 183.6, D = 9.3; const sc = { duration: D, out: '06_doc-style/overlays/E09_cooler-water-far-away', alpha: true, qscale: 20 };
+const T0 = 183.6, D = 9.3; const sc = { duration: D, out: 'overlays/E09_cooler-water-far-away', alpha: true, qscale: 20 };
 let R, tCool, tSwim, tBurn;
 sc.setup = async () => { await loadVO(); R = rel(T0); tCool = R.s('cooler water', 183); tSwim = R.s('long swim', 183); tBurn = R.s('burns through', 183);
   sc.sfx = [{ name: 'data_blip', t: tCool + 0.2, gain: -12 }, { name: 'whoosh_slow', t: tSwim, gain: -14 }, { name: 'alarm_low', t: tBurn + 0.6, gain: -14 }]; };

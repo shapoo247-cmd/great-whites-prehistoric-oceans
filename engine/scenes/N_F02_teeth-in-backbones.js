@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, fadeEdges, slow, COL } from '../lib/doc.js';
 import { vertebra, tooth } from '../lib/props.js';
-const T0 = 349.9, D = 4.6; const sc = { duration: D, out: '06_doc-style/overlays/F02_teeth-in-mosasaur-backbones', alpha: true, qscale: 20 };
+const T0 = 349.9, D = 4.6; const sc = { duration: D, out: 'overlays/F02_teeth-in-mosasaur-backbones', alpha: true, qscale: 20 };
 let R, tT, tB;
 sc.setup = async () => { await loadVO(); R = rel(T0); tT = R.s('its teeth', 349); tB = R.s('mosasaur backbones', 349); sc.sfx = [{ name: 'data_blip', t: tT, gain: -12 }, { name: 'impact_hit', t: tB - 0.1, gain: -16 }]; };
 sc.draw = (ctx, t) => {

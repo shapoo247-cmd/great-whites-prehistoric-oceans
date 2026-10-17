@@ -1,7 +1,7 @@
 // Z01 · VO 0:54.19  Dunkleosteus ~3.5 m, short and thick, as heavy as a 4.5 m great white; on paper GW slightly bigger; armor only head & shoulders; behind that, just fish.
 import { loadVO, rel } from '../lib/vo.js';
 import { stage, cap, hair, big, measure, P, ease, lerp, clamp, slow, COL } from '../lib/sizecomp2.js';
-const T0 = 54.19, D = 20.6; const sc = { duration: D, out: '06_doc-style/size-comparisons/Z01_dunkleosteus-vs-greatwhite' };
+const T0 = 54.19, D = 20.6; const sc = { duration: D, out: 'size-comparisons/Z01_dunkleosteus-vs-greatwhite' };
 let S, R, tD, tTuna, tG, tHeavy, tPaper, tArmor, tFish;
 const ppm = 200, X0 = 300;
 sc.setup = async () => { await loadVO(); R = rel(T0); S = stage('devonian', 21);

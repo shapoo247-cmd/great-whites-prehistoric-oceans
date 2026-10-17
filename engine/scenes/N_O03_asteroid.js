@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 383.4, D = 4.6; const sc = { duration: D, out: '06_doc-style/overlays/O03_asteroid-impact', alpha: true, qscale: 20 };
+const T0 = 383.4, D = 4.6; const sc = { duration: D, out: 'overlays/O03_asteroid-impact', alpha: true, qscale: 20 };
 let R, tHit, tVan;
 sc.setup = async () => { await loadVO(); R = rel(T0); tHit = R.s('asteroid hits', 383) + 0.25; tVan = R.s('mosasaurs vanish', 383);
   sc.sfx = [{ name: 'riser', t: tHit - 1.2, gain: -12 }, { name: 'whoosh_fast', t: tHit - 0.7, gain: -8 }, { name: 'impact_deep', t: tHit, gain: -2 }, { name: 'rumble_bed', t: tHit, gain: -6 }]; };

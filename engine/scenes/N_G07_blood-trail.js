@@ -3,7 +3,7 @@ import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
 import { mulberry } from '../lib/core.js';
-const T0 = 244.3, D = 5.2; const sc = { duration: D, out: '06_doc-style/overlays/G07_blood-carries-something-bigger', alpha: true, qscale: 20 };
+const T0 = 244.3, D = 5.2; const sc = { duration: D, out: 'overlays/G07_blood-carries-something-bigger', alpha: true, qscale: 20 };
 let R, tBlood, tBig; const r = mulberry(7), puffs = Array.from({ length: 26 }, () => ({ u: r(), y: r() - 0.5, s: 0.6 + r() * 0.8 }));
 sc.setup = async () => { await loadVO(); R = rel(T0); tBlood = R.s('blood carries', 244); tBig = R.s('much bigger', 244); sc.sfx = [{ name: 'data_blip', t: tBlood, gain: -11 }, { name: 'rumble_bed', t: tBig - 0.3, gain: -9 }, { name: 'impact_deep', t: tBig + 1.2, gain: -9 }]; };
 sc.draw = (ctx, t) => {

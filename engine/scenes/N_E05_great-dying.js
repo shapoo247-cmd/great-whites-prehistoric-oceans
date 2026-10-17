@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { mulberry } from '../lib/core.js';
-const T0 = 128.5, D = 6.8; const sc = { duration: D, out: '06_doc-style/overlays/E05_great-dying-80-90', alpha: true, qscale: 20 };
+const T0 = 128.5, D = 6.8; const sc = { duration: D, out: 'overlays/E05_great-dying-80-90', alpha: true, qscale: 20 };
 let R, t80, t90, tGone, tTitle; const rnd = mulberry(8); const order = Array.from({ length: 100 }, (_, i) => i).sort(() => rnd() - 0.5);
 sc.setup = async () => { await loadVO(); R = rel(T0); tTitle = R.s('great dying'); t80 = R.s('eighty'); t90 = R.s('ninety'); tGone = R.s('gone', 128);
   sc.sfx = [{ name: 'impact_dark', t: 0.1, gain: -12 }, { name: 'data_blip', t: t80, gain: -10 }, { name: 'impact_deep', t: tGone, gain: -10 }]; };

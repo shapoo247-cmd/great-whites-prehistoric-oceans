@@ -3,7 +3,7 @@ import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, P, ease, lerp, slow, COL } from '../lib/doc.js';
 import { mulberry, noise1, mix } from '../lib/core.js';
 import { Water } from '../lib/water.js';
-const T0 = 86.9, D = 6.5; const sc = { duration: D, out: '06_doc-style/full-frame/E03_black-shale-dead-zones' };
+const T0 = 86.9, D = 6.5; const sc = { duration: D, out: 'full-frame/E03_black-shale-dead-zones' };
 let R, tRocks, tShale, tDead, tOx, W;
 const rnd = mulberry(21), strata = []; let yy = 0;
 for (let i = 0; i < 26; i++) { const black = [2, 5, 8, 12, 15, 19].includes(i); const th = black ? 70 + rnd() * 70 : 55 + rnd() * 80; strata.push({ y0: yy, y1: yy + th, black, seed: rnd() * 50 }); yy += th; }

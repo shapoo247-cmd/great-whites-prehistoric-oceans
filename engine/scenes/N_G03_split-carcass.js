@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 333.4, D = 4.4; const sc = { duration: D, out: '06_doc-style/overlays/G03_split-the-carcass', alpha: true, qscale: 20 };
+const T0 = 333.4, D = 4.4; const sc = { duration: D, out: 'overlays/G03_split-the-carcass', alpha: true, qscale: 20 };
 let R, tNeither, tSplit;
 sc.setup = async () => { await loadVO(); R = rel(T0); tNeither = R.s('neither one', 333); tSplit = R.s('they split', 333); sc.sfx = [{ name: 'data_blip', t: tNeither, gain: -11 }, { name: 'ui_drop', t: tSplit, gain: -8 }]; };
 sc.draw = (ctx, t) => {

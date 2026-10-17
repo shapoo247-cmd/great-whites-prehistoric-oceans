@@ -4,7 +4,7 @@ import { cap, hair, P, ease, lerp, slow, COL } from '../lib/doc.js';
 import { mapBase, sea } from '../lib/docMap.js';
 import { pin, geoMercator } from '../lib/maps.js';
 import { Water } from '../lib/water.js';
-const T0 = 414.8, D = 8.7; const sc = { duration: D, out: '06_doc-style/full-frame/E11_tethys-sea-egypt-map' };
+const T0 = 414.8, D = 8.7; const sc = { duration: D, out: 'full-frame/E11_tethys-sea-egypt-map' };
 let R, base, proj, tSea, tDesert, tFull, W;
 const TETHYS = [[24.5, 31.2], [26.5, 29.9], [28.6, 28.9], [30.4, 28.6], [31.8, 28.9], [33.0, 30.0], [34.4, 31.2], [34.4, 31.8], [34.4, 33.2], [24.5, 33.2], [24.0, 32.0]];
 sc.setup = async () => { await loadVO(); R = rel(T0); tSea = R.s('tethys', 414); tDesert = R.s('now desert', 414); tFull = R.s('full of exactly', 414);

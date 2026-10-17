@@ -1,7 +1,7 @@
 // E07 · VO 2:25.4  "built for cold water... warm water holds less oxygen while a warm body demands more."
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-const T0 = 145.4, D = 8.8; const sc = { duration: D, out: '06_doc-style/overlays/E07_oxygen-supply-vs-demand', alpha: true, qscale: 20 };
+const T0 = 145.4, D = 8.8; const sc = { duration: D, out: 'overlays/E07_oxygen-supply-vs-demand', alpha: true, qscale: 20 };
 let R, tCold, tLess, tMore;
 sc.setup = async () => { await loadVO(); R = rel(T0); tCold = R.s('built for cold', 145); tLess = R.s('holds less', 145); tMore = R.s('demands more', 145);
   sc.sfx = [{ name: 'data_blip', t: tCold, gain: -12 }, { name: 'whoosh_slow', t: tLess, gain: -16 }, { name: 'alarm_low', t: tMore + 0.9, gain: -14 }]; };

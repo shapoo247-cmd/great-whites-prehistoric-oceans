@@ -3,7 +3,7 @@ import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, fadeEdges, slow, COL } from '../lib/doc.js';
 import { bone, vertebra, tooth } from '../lib/props.js';
 import { mulberry } from '../lib/core.js';
-const T0 = 472.7, D = 5.4; const sc = { duration: D, out: '06_doc-style/overlays/F05_shark-teeth-among-bones', alpha: true, qscale: 20 };
+const T0 = 472.7, D = 5.4; const sc = { duration: D, out: 'overlays/F05_shark-teeth-among-bones', alpha: true, qscale: 20 };
 let R, tTeeth, tAte; const r = mulberry(12);
 const bones = Array.from({ length: 6 }, (_, i) => ({ x: 1180 + (i % 3) * 260 + r() * 40, y: 430 + Math.floor(i / 3) * 210 + r() * 40, l: 300 + r() * 120, a: -0.5 + r() * 1.0 }));
 const teeth = Array.from({ length: 5 }, () => ({ x: 1220 + r() * 560, y: 400 + r() * 330, rot: r() * 6.28, h: 62 + r() * 20 }));

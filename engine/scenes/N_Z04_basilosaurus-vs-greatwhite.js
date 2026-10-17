@@ -1,7 +1,7 @@
 // Z04 · VO 7:36.08  "A whale too, but serpent-shaped and 15 to 18 meters long." (+ great white and Dorudon for scale)
 import { loadVO, rel } from '../lib/vo.js';
 import { stage, cap, hair, big, measure, P, ease, lerp, clamp, slow, COL } from '../lib/sizecomp2.js';
-const T0 = 455.8, D = 4.9; const sc = { duration: D, out: '06_doc-style/size-comparisons/Z04_basilosaurus-vs-greatwhite-vs-dorudon' };
+const T0 = 455.8, D = 4.9; const sc = { duration: D, out: 'size-comparisons/Z04_basilosaurus-vs-greatwhite-vs-dorudon' };
 let S, R, t15; const ppm = 92, X0 = 130;
 sc.setup = async () => { await loadVO(); R = rel(T0); S = stage('eocene', 24); t15 = R.s('fifteen', 455);
   sc.sfx = [{ name: 'whoosh_slow', t: 0.1, gain: -8 }, { name: 'impact_deep', t: t15, gain: -9 }, { name: 'data_blip', t: t15 + 0.3, gain: -9 }]; };

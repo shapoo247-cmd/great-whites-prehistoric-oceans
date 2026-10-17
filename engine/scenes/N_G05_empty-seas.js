@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { lit } from '../lib/doc.js';
-const T0 = 436.2, D = 7.9; const sc = { duration: D, out: '06_doc-style/overlays/G05_no-mosasaurs-no-pliosaurs', alpha: true, qscale: 20 };
+const T0 = 436.2, D = 7.9; const sc = { duration: D, out: 'overlays/G05_no-mosasaurs-no-pliosaurs', alpha: true, qscale: 20 };
 let R, tM, tP, tGone;
 sc.setup = async () => { await loadVO(); R = rel(T0); tM = R.s('no mosasaurs', 436); tP = R.s('no pliosaurs', 436); tGone = R.s('are gone', 436); sc.sfx = [{ name: 'impact_dark', t: tM + 0.1, gain: -12 }, { name: 'impact_dark', t: tP + 0.1, gain: -12 }, { name: 'whoosh_slow', t: tGone, gain: -14 }];
 };

@@ -1,7 +1,7 @@
 // Z03 · VO 5:09.27  "Same torpedo body. Same slicing teeth. Close to the same size."
 import { loadVO, rel } from '../lib/vo.js';
 import { stage, cap, hair, big, P, ease, lerp, slow, COL } from '../lib/sizecomp2.js';
-const T0 = 308.9, D = 5.5; const sc = { duration: D, out: '06_doc-style/size-comparisons/Z03_greatwhite-vs-cretoxyrhina' };
+const T0 = 308.9, D = 5.5; const sc = { duration: D, out: 'size-comparisons/Z03_greatwhite-vs-cretoxyrhina' };
 let S, R, tb, tt, ts;
 sc.setup = async () => { await loadVO(); R = rel(T0); S = stage('cretaceous', 23); tb = R.s('same torpedo', 308); tt = R.s('same slicing', 308); ts = R.s('close to', 308);
   sc.sfx = [{ name: 'whoosh_water', t: 0, gain: -9 }, { name: 'ui_drop', t: tb, gain: -8 }, { name: 'ui_drop', t: tt, gain: -8 }, { name: 'ui_drop', t: ts, gain: -8 }]; };

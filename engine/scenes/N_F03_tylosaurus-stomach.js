@@ -4,7 +4,7 @@ import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../li
 import { drawCreature, creaturePath } from '../lib/creatures.js';
 import { plesiosaur } from '../lib/props.js';
 import { lit } from '../lib/doc.js';
-const T0 = 374.4, D = 6.2; const sc = { duration: D, out: '06_doc-style/overlays/F03_tylosaurus-stomach', alpha: true, qscale: 20 };
+const T0 = 374.4, D = 6.2; const sc = { duration: D, out: 'overlays/F03_tylosaurus-stomach', alpha: true, qscale: 20 };
 let R, tP, tS;
 sc.setup = async () => { await loadVO(); R = rel(T0); tP = R.s('plesiosaur', 374); tS = R.s('eaten a shark', 374); sc.sfx = [{ name: 'data_blip', t: tP, gain: -11 }, { name: 'impact_dark', t: tS, gain: -14 }]; };
 sc.draw = (ctx, t) => {

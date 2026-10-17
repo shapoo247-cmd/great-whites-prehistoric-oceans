@@ -1,7 +1,7 @@
 // E15 · VO 9:28.0  "As the oceans cooled and prey shifted, that flexibility mattered. By about 3.6 million years ago, megalodon was gone. Whether great whites helped push it out is still debated. Cooling seas and changing prey likely played a part too."
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-const T0 = 568.0, D = 16.3; const sc = { duration: D, out: '06_doc-style/overlays/E15_timeline-megalodon-gone-3-6-mya', alpha: true, qscale: 20 };
+const T0 = 568.0, D = 16.3; const sc = { duration: D, out: 'overlays/E15_timeline-megalodon-gone-3-6-mya', alpha: true, qscale: 20 };
 let R, tCool, tGone, tDebate, tAlso;
 sc.setup = async () => { await loadVO(); R = rel(T0); tCool = R.s('oceans cooled', 568); tGone = R.s('megalodon was gone', 572); tDebate = R.s('still debated', 576); tAlso = R.s('cooling seas', 579);
   sc.sfx = [{ name: 'whoosh_slow', t: tCool, gain: -14 }, { name: 'impact_deep', t: tGone, gain: -9 }, { name: 'data_blip', t: tDebate, gain: -12 }]; };

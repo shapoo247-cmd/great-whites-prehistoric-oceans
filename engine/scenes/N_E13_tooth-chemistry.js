@@ -2,7 +2,7 @@
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { tooth } from '../lib/props.js';
-const T0 = 546.2, D = 8.9; const sc = { duration: D, out: '06_doc-style/overlays/E13_tooth-chemistry-overlap', alpha: true, qscale: 20 };
+const T0 = 546.2, D = 8.9; const sc = { duration: D, out: 'overlays/E13_tooth-chemistry-overlap', alpha: true, qscale: 20 };
 let R, tChem, tOver, tSeas, tPrey, tComp;
 sc.setup = async () => { await loadVO(); R = rel(T0); tChem = R.s('chemistry', 546); tOver = R.s('overlapping', 546); tSeas = R.s('same seas', 546); tPrey = R.s('same kinds', 546); tComp = R.s('competitors', 546);
   sc.sfx = [{ name: 'data_blip', t: tChem, gain: -11 }, { name: 'data_blip', t: tOver, gain: -11 }, { name: 'impact_hit', t: tComp, gain: -12 }]; };

@@ -1,7 +1,7 @@
 // O02 · VO 3:20.1  "The seas take about 5 million years to recover."  Lower-centre timeline fill.
 import { loadVO, rel } from '../lib/vo.js';
 import { cap, hair, big, veil, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
-const T0 = 200.0, D = 3.6; const sc = { duration: D, out: '06_doc-style/overlays/O02_five-million-years-recovery', alpha: true, qscale: 20 };
+const T0 = 200.0, D = 3.6; const sc = { duration: D, out: 'overlays/O02_five-million-years-recovery', alpha: true, qscale: 20 };
 let tFive;
 sc.setup = async () => { await loadVO(); tFive = rel(T0).s('5 million'.replace('5', 'five'), 200); sc.sfx = [{ name: 'riser', t: tFive - 1.0, gain: -16 }, { name: 'data_blip', t: tFive + 1.2, gain: -12 }]; };
 sc.draw = (ctx, t) => {

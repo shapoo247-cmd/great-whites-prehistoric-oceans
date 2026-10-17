@@ -1,7 +1,7 @@
 // Z05 · THE PAYOFF. VO 8:37.40  Belgian skeleton ~16 m = roughly three great whites nose to tail; some estimates go higher.
 import { loadVO, rel } from '../lib/vo.js';
 import { stage, cap, hair, big, measure, P, ease, lerp, clamp, slow, COL, drawCreature } from '../lib/sizecomp2.js';
-const T0 = 517.0, D = 11.6; const sc = { duration: D, out: '06_doc-style/size-comparisons/Z05_MEGALODON-payoff-16m-three-great-whites' };
+const T0 = 517.0, D = 11.6; const sc = { duration: D, out: 'size-comparisons/Z05_MEGALODON-payoff-16m-three-great-whites' };
 let S, R, tBel, t16, t3, tNose, tHigh; const X0 = 150, ML = 1450, MY = 560, GL = ML / 16 * 5;
 sc.setup = async () => { await loadVO(); R = rel(T0); S = stage('pliocene', 25, 0.45); tBel = R.s('belgium', 517); t16 = R.s('sixteen', 517); t3 = R.s('roughly three', 517); tNose = R.s('nose to tail', 517); tHigh = R.s('estimates go higher', 517);
   sc.sfx = [{ name: 'impact_dark', t: 0.2, gain: -3 }, { name: 'rumble_bed', t: 0.4, gain: -6 }, { name: 'sonar_ping', t: tBel, gain: -8 }, { name: 'impact_deep', t: t16, gain: -4 }, { name: 'riser', t: t3 - 1.2, gain: -12 }, { name: 'ui_drop', t: t3 + 0.05, gain: -4 }, { name: 'ui_drop', t: t3 + 0.75, gain: -4 }, { name: 'ui_drop', t: tNose, gain: -3 }, { name: 'impact_hit', t: tNose + 0.1, gain: -8 }, { name: 'whoosh_slow', t: tHigh - 0.2, gain: -10 }, { name: 'impact_dark', t: tHigh, gain: -8 }]; };

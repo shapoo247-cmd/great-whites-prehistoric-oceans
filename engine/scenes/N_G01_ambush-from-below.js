@@ -3,7 +3,7 @@ import { loadVO, rel } from '../lib/vo.js';
 import { hair, P, ease, lerp, fadeEdges, slow, COL } from '../lib/doc.js';
 import { drawCreature, creaturePath } from '../lib/creatures.js';
 import { lit } from '../lib/doc.js';
-const T0 = 221.2, D = 6.4; const sc = { duration: D, out: '06_doc-style/overlays/G01_ambush-from-below', alpha: true, qscale: 20 };
+const T0 = 221.2, D = 6.4; const sc = { duration: D, out: 'overlays/G01_ambush-from-below', alpha: true, qscale: 20 };
 let R, tUp, tHit;
 sc.setup = async () => { await loadVO(); R = rel(T0); tUp = R.s('straight up', 221); tHit = R.s('connects', 221); sc.sfx = [{ name: 'whoosh_water', t: tUp, gain: -10 }, { name: 'impact_hit', t: tHit + 0.1, gain: -9 }]; };
 sc.draw = (ctx, t) => {

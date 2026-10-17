@@ -19,4 +19,4 @@ export function finalScene(duration, out) {
     }
   };
 }
-export default finalScene(14.0, '01_tier-board/T07_final-board_ENDING-14s');
+export default finalScene(14.0, 'tier-system/T07_final-board_ENDING-14s');
