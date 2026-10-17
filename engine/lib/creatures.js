@@ -135,6 +135,14 @@ const SEAL_BODY = [
 ];
 const SEAL_FINS = [[[0.680, 0.110], [0.640, 0.200, S], [0.600, 0.120]]];
 
+
+let _skin = null, _ct = null;
+function skinTex() { if (_skin) return _skin; const c = document.createElement('canvas'); c.width = c.height = 256; const x = c.getContext('2d'); x.fillStyle = '#808080'; x.fillRect(0, 0, 256, 256); let a = 12345; const r = () => { a = (a * 1664525 + 1013904223) >>> 0; return a / 4294967296; };
+  for (let i = 0; i < 5200; i++) { const v = r() > 0.5 ? 255 : 0; x.fillStyle = `rgba(${v},${v},${v},${0.05 + r() * 0.10})`; x.beginPath(); x.arc(r() * 256, r() * 256, 0.6 + r() * 1.8, 0, 7); x.fill(); }
+  for (let i = 0; i < 60; i++) { x.strokeStyle = `rgba(0,0,0,${0.03 + r() * 0.05})`; x.lineWidth = 1 + r() * 2; x.beginPath(); const y = r() * 256; x.moveTo(0, y); x.bezierCurveTo(80, y + (r() - 0.5) * 30, 170, y + (r() - 0.5) * 30, 256, y + (r() - 0.5) * 10); x.stroke(); }
+  return (_skin = c); }
+function causTmp() { return _ct || (_ct = Object.assign(document.createElement('canvas'), { width: 1800, height: 900 })); }
+
 export const SPECIES = {
   greatwhite: { body: GW_BODY, fins: GW_FINS, eye: [0.915, -0.030, 0.0065], gills: [0.778, 0.723], mouth: [[0.976, 0.031], [0.905, 0.056]], undulate: 'tail', len: 5 },
   megalodon: { body: MEG_BODY, fins: MEG_FINS, eye: [0.912, -0.034, 0.006], gills: [0.785, 0.722], mouth: [[0.982, 0.034], [0.900, 0.066]], undulate: 'tail', len: 16 },
@@ -183,7 +191,7 @@ function deformer(spec, phase, amp) {
     let nx = x;
     if (x < 0.14) { const s = 0.80 + 0.20 * Math.cos(phase); nx = 0.14 - (0.14 - x) * s; }
     const tw = Math.max(0, 0.35 - x) / 0.35;
-    return [nx, y + amp * 0.012 * tw * tw * Math.sin(phase + 0.6)];
+    return [nx, y + amp * 0.012 * tw * tw * Math.sin(phase + 0.6) + amp * 0.006 * Math.sin(phase - x * 7.0) * (1 - x * 0.6)];
   };
 }
 
@@ -265,6 +273,19 @@ export function drawCreature(ctx, name, o) {
     seam([[0.86, -0.155], [0.85, -0.08], [0.84, 0.0], [0.82, 0.10]]);
     seam([[0.975, 0.046], [0.94, 0.050], [0.89, 0.058], [0.83, 0.075]]);
     seam([[0.83, 0.075], [0.80, 0.10], [0.785, 0.12]]);
+    ctx.restore();
+  }
+  // realism pass: skin grain + drifting caustic light (only when o.real)
+  if (o.real) {
+    ctx.save(); ctx.clip(path);
+    const sk = skinTex(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.34; ctx.fillStyle = ctx.createPattern(sk, 'repeat'); ctx.fillRect(o.x - len, o.y - len * 0.5, len * 2, len);
+    if (o.caus) {
+      const tmp = causTmp(); const tx = tmp.getContext('2d'); tx.setTransform(1, 0, 0, 1, 0, 0); tx.globalCompositeOperation = 'source-over'; tx.clearRect(0, 0, tmp.width, tmp.height);
+      const bx = o.x - len * 0.55, by = o.y - len * 0.3, bw = len * 1.1, bh = len * 0.6; const w = o.caus.width * (len / 520), ox = -(((o.ct || 0) * 38 + o.x * 0.2) % w), oy = -(((o.ct || 0) * 14) % w);
+      tx.save(); tx.translate(-bx, -by); tx.globalAlpha = 0.9; for (let x = ox + bx - w; x < bx + bw; x += w) for (let yy = oy + by - w; yy < by + bh; yy += w) tx.drawImage(o.caus, x, yy, w, w); tx.restore();
+      tx.globalCompositeOperation = 'destination-in'; const gm = tx.createLinearGradient(0, 0, 0, bh); gm.addColorStop(0, 'rgba(0,0,0,0.95)'); gm.addColorStop(0.55, 'rgba(0,0,0,0.25)'); gm.addColorStop(1, 'rgba(0,0,0,0)'); tx.fillStyle = gm; tx.fillRect(0, 0, bw, bh);
+      ctx.globalCompositeOperation = 'screen'; ctx.globalAlpha = o.causA ?? 0.5; ctx.drawImage(tmp, 0, 0, bw, bh, bx, by, bw, bh);
+    }
     ctx.restore();
   }
   // rim light from above + soft shadow below

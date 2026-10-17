@@ -51,4 +51,4 @@ export const PAL = {
   dark:  { colors: { back: '#05090c', flank: '#0d171d', belly: '#1c2a33' }, rim: 'rgba(120,170,190,0.4)' },
   grey:  { colors: { back: '#1c2731', flank: '#3a4a57', belly: '#8d9aa3' }, rim: 'rgba(200,230,240,0.55)' },
 };
-export function lit(ctx, name, o) { const p = PAL[o.pal || 'grey']; return _dc(ctx, name, { style: 'shaded', colors: p.colors, rim: p.rim, fog: o.fog || ['#0b1a1c', o.fogA ?? 0.08], ...o }); }
+export function lit(ctx, name, o) { const p = PAL[o.pal || 'grey']; return _dc(ctx, name, { style: 'shaded', real: true, colors: p.colors, rim: p.rim, fog: o.fog || ['#0b1a1c', o.fogA ?? 0.08], ...o }); }
